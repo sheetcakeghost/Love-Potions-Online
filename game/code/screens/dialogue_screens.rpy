@@ -13,6 +13,7 @@
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
 screen say(who, what):
+    layer "screens"
     style_prefix "say"
 
     window:

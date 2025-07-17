@@ -1,692 +1,851 @@
+image fog_anim = Movie(play="images/FX/webm/Fog.webm", loop=True)
 # Screen Effects
-# Handles webm effects with black backgrounds using screen blending
+# Handles PNG sequence effects and SnowBlossom particle effects
 
-# Screen blending mode for transparency
-init python:
-    # Screen blending mode for black background removal
-    def screen_blend_mode():
-        return "screen"
+# --- Video-based image definitions for effects ---
+image underwater_anim = Movie(play="images/FX/webm/Underwater.webm", loop=True)
+image godrays_anim = Movie(play="images/FX/webm/GodRay_L.webm", loop=True)
+image godrays_r_anim = Movie(play="images/FX/webm/GodRay_R.webm", loop=True)
+image leaves_anim = Movie(play="images/FX/webm/Leaves.webm", loop=True)
+image blossom_anim = Movie(play="images/FX/webm/Blossoms.webm", loop=True)
+image sparkle_blue_anim = Movie(play="images/FX/webm/Sparkle_blue.webm", loop=True)
+image sparkle_red_anim = Movie(play="images/FX/webm/Sparkle_red.webm", loop=True)
+image sparkle_green_anim = Movie(play="images/FX/webm/Sparkle_green.webm", loop=True)
+image sparkle_yellow_anim = Movie(play="images/FX/webm/Sparkle_yellow.webm", loop=True)
+image sparkle_purple_anim = Movie(play="images/FX/webm/Sparkle_purple.webm", loop=True)
+image sparkle_pink_anim = Movie(play="images/FX/webm/Sparkle_pink.webm", loop=True)
+image plasma_blue_anim = Movie(play="images/FX/webm/Plasma_blue.webm", loop=True)
+image plasma_red_anim = Movie(play="images/FX/webm/Plasma_red.webm", loop=True)
+image plasma_green_anim = Movie(play="images/FX/webm/Plasma_green.webm", loop=True)
+image plasma_yellow_anim = Movie(play="images/FX/webm/Plasma_yellow.webm", loop=True)
+image plasma_purple_anim = Movie(play="images/FX/webm/Plasma_purple.webm", loop=True)
+image plasma_white_anim = Movie(play="images/FX/webm/Plasma_white.webm", loop=True)
+image confetti_warm_anim = Movie(play="images/FX/webm/Confetti_warm.webm", loop=True)
+image confetti_cool_anim = Movie(play="images/FX/webm/Confetti_cool.webm", loop=True)
+image confetti_colorful_anim = Movie(play="images/FX/webm/Confetti_colorful.webm", loop=True)
+image matrix_anim = Movie(play="images/FX/webm/Matrix.webm", loop=True)
+image nightsky_anim = Movie(play="images/FX/webm/NightSky.webm", loop=True)
+image shootingstar_anim = Movie(play="images/FX/webm/NightSky_ShootingStar.webm", loop=True)
+image stars_blue_anim = Movie(play="images/FX/webm/Stars_blue.webm", loop=True)
+image stars_red_anim = Movie(play="images/FX/webm/Stars_red.webm", loop=True)
+image stars_green_anim = Movie(play="images/FX/webm/Stars_green.webm", loop=True)
+image stars_yellow_anim = Movie(play="images/FX/webm/Stars_yellow.webm", loop=True)
+image stars_purple_anim = Movie(play="images/FX/webm/Stars_purple.webm", loop=True)
+image stars_pink_anim = Movie(play="images/FX/webm/Stars_pink.webm", loop=True)
+image portal_blue_anim = Movie(play="images/FX/webm/Portal_blue.webm", loop=True)
+image portal_red_anim = Movie(play="images/FX/webm/Portal_red.webm", loop=True)
+image portal_green_anim = Movie(play="images/FX/webm/Portal_green.webm", loop=True)
+image portal_yellow_anim = Movie(play="images/FX/webm/Portal_yellow.webm", loop=True)
+image portal_purple_anim = Movie(play="images/FX/webm/Portal_purple.webm", loop=True)
+image portal_pink_anim = Movie(play="images/FX/webm/Portal_pink.webm", loop=True)
 
-# Base screen effect class
-# Generic screen effect display
+# Leaves animation
+image leaves_anim:
+    "images/FX/animated/leaves/leaves_0000.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0001.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0002.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0003.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0004.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0005.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0006.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0007.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0008.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0009.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0010.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0011.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0012.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0013.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0014.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0015.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0016.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0017.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0018.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0019.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0020.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0021.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0022.png"
+    pause 0.033
+    "images/FX/animated/leaves/leaves_0023.png"
+    repeat
+
+# Blossom animation
+image blossom_anim:
+    "images/FX/animated/blossom/blossom_0000.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0001.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0002.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0003.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0004.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0005.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0006.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0007.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0008.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0009.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0010.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0011.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0012.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0013.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0014.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0015.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0016.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0017.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0018.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0019.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0020.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0021.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0022.png"
+    pause 0.033
+    "images/FX/animated/blossom/blossom_0023.png"
+    repeat
+
+# Sparkle animation
+image sparkle_anim:
+    "images/FX/animated/sparkle/sparkle_0000.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0001.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0002.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0003.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0004.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0005.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0006.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0007.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0008.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0009.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0010.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0011.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0012.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0013.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0014.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0015.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0016.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0017.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0018.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0019.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0020.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0021.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0022.png"
+    pause 0.033
+    "images/FX/animated/sparkle/sparkle_0023.png"
+    repeat
+
+# Plasma animation
+image plasma_anim:
+    "images/FX/animated/plasma/plasma_0000.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0001.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0002.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0003.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0004.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0005.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0006.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0007.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0008.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0009.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0010.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0011.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0012.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0013.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0014.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0015.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0016.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0017.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0018.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0019.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0020.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0021.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0022.png"
+    pause 0.033
+    "images/FX/animated/plasma/plasma_0023.png"
+    repeat
+
+# Confetti animation
+image confetti_anim:
+    "images/FX/animated/confetti/confetti_0000.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0001.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0002.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0003.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0004.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0005.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0006.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0007.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0008.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0009.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0010.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0011.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0012.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0013.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0014.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0015.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0016.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0017.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0018.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0019.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0020.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0021.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0022.png"
+    pause 0.033
+    "images/FX/animated/confetti/confetti_0023.png"
+    repeat
+
+# Night sky animation
+image nightsky_anim:
+    "images/FX/animated/nightsky/nightsky_0000.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0001.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0002.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0003.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0004.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0005.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0006.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0007.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0008.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0009.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0010.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0011.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0012.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0013.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0014.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0015.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0016.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0017.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0018.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0019.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0020.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0021.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0022.png"
+    pause 0.033
+    "images/FX/animated/nightsky/nightsky_0023.png"
+    repeat
+
+  
+# Base screen effect class for PNG sequences
+# Generic screen effect display for static animations
 # Parameters:
-# - effect_name: Name of the effect file (without extension)
+# - effect_name: Name of the effect folder in images/FX/animated/
 # - x, y: Position coordinates
 # - loop: Whether the effect should loop
-# - y_offset: Vertical offset for fine-tuning alignment
-# - scale_to_screen: If True, scales the effect to the full screen size
-screen screen_effect(effect_name, x=0, y=0, loop=True, y_offset=0, scale_to_screen=False):
-    frame:
-        xpos x
-        ypos y + y_offset
-        background None
-
-        if scale_to_screen:
-            add Movie(play="images/FX/webm/" + effect_name + ".webm", loop=loop, channel="movie") size (config.screen_width, config.screen_height):
-                additive 1.0
-        else:
-            add Movie(play="images/FX/webm/" + effect_name + ".webm", loop=loop, channel="movie"):
-                additive 1.0
-
-# Alternative WebM effect implementation using different approach
-# This version uses a different method to handle transparency
-screen webm_effect_alt(effect_name, x=0, y=0, loop=True):
+# - fps: Frames per second for the animation
+screen png_sequence_effect(effect_name, x=0, y=0, loop=True, fps=30):
+    layer "sfx"
     frame:
         xpos x
         ypos y
         background None
         
-        # Alternative approach with additive blending
-        add Movie(play="images/FX/webm/" + effect_name + ".webm", loop=loop, channel="movie"):
-            additive 1.0
+        # Create animated image from PNG sequence
+        add At("images/FX/animated/" + effect_name + "/" + effect_name + "_0000.png", png_sequence_transform(effect_name, loop, fps))
 
-# Helper for vertical tiling
+# ATL transform for PNG sequence animation
+transform png_sequence_transform(effect_name, loop=True, fps=30):
+    # Get the number of frames by checking the directory
+    function get_png_sequence_frames_with_params(effect_name, loop, fps)
+
+# Python function to handle PNG sequence animation
 init python:
-    def tiled_screen_effect(effect_name, x=0, y=0, loop=True, y_offset=0, scale_to_screen=True):
-        return [
-            Movie(play="images/FX/webm/" + effect_name + ".webm", loop=loop, channel="movie")
-                .size((config.screen_width, config.screen_height))
-                .at_list([Transform(ypos=y_offset)])
-                .additive(1.0),
-            Movie(play="images/FX/webm/" + effect_name + ".webm", loop=loop, channel="movie")
-                .size((config.screen_width, config.screen_height))
-                .at_list([Transform(ypos=(config.screen_height // 2 + y_offset))])
-                .additive(1.0)
-        ]
+    def get_png_sequence_frames_with_params(effect_name, loop, fps):
+        """Create a function that captures the parameters and returns the animation function"""
+        def animation_function(trans, st, at):
+            """Handle PNG sequence animation using ATL function"""
+            import os
+            
+            # Calculate frame duration
+            frame_duration = 1.0 / fps
+            
+            # Calculate current frame based on time
+            frame_number = int(st / frame_duration)
+            
+            # Get the directory path
+            dir_path = "game/images/FX/animated/" + effect_name
+            
+            # Check if directory exists
+            if not os.path.exists(dir_path):
+                return 0.1  # Return small delay if directory doesn't exist
+            
+            # Count frames in directory
+            frame_count = 0
+            for file in os.listdir(dir_path):
+                if file.startswith(effect_name + "_") and file.endswith(".png"):
+                    frame_count += 1
+            
+            if frame_count == 0:
+                return 0.1  # Return small delay if no frames found
+            
+            # Calculate current frame (with looping)
+            if loop:
+                current_frame = frame_number % frame_count
+            else:
+                current_frame = min(frame_number, frame_count - 1)
+            
+            # Format frame number with leading zeros
+            frame_str = f"{current_frame:04d}"
 
-# Weather Effects
-# Light rain effect
+            # Debug log for fog animation
+            if effect_name == "fog":
+                renpy.log("Fog animation: frame_count=%d, current_frame=%d, file=%s", frame_count, current_frame, "images/FX/animated/" + effect_name + "/" + effect_name + "_" + frame_str + ".png")
+
+            # Set the displayable to the current frame
+            trans.child = "images/FX/animated/" + effect_name + "/" + effect_name + "_" + frame_str + ".png"
+            
+            # Return delay until next frame
+            return frame_duration
+        
+        return animation_function
+
+# Weather Effects using SnowBlossom
+# Light rain effect using SnowBlossom
 screen rain_light(x=0, y=0):
-    use screen_effect("Rain_light", x, y, True)
-
-# Heavy rain effect
-screen rain_heavy(x=0, y=0):
-    use screen_effect("Rain_heavy", x, y, True)
-
-# Light snow effect using Ren'Py's snowblossom with custom snowflakes
-screen snow_light(x=0, y=0):
-    zorder 100
+    layer "sfx"
     frame:
         xpos x
         ypos y
         background None
         
-        # Light snow using snowblossom with custom snowflake assets
-        add SnowBlossom("images/FX/png/snow/snow_1.png", count=50, xspeed=(20, 50), yspeed=(100, 200), start=0, fast=True, horizontal=True)
-        add SnowBlossom("images/FX/png/snow/snow_2.png", count=40, xspeed=(15, 45), yspeed=(80, 180), start=0.5, fast=True, horizontal=True)
-        add SnowBlossom("images/FX/png/snow/snow_3.png", count=35, xspeed=(25, 55), yspeed=(120, 220), start=1.0, fast=True, horizontal=True)
+        # Grey filter overlay for gloomy atmosphere
+        add Solid("#404040") alpha 0.15
+        
+        # Light rain using SnowBlossom with rain drops - extremely fast aggressive downward movement with random positioning, varied transparency, and size variation
+        add SnowBlossom("images/FX/snowblossom/rain/rain_1.png", count=30, xspeed=(0, 5), yspeed=(1200, 1500), start=0, fast=True, horizontal=False, border=50) alpha 0.4 zoom 0.8
+        add SnowBlossom("images/FX/snowblossom/rain/rain_2.png", count=25, xspeed=(0, 3), yspeed=(1100, 1400), start=0.5, fast=True, horizontal=False, border=50) alpha 0.2 zoom 0.5
+        add SnowBlossom("images/FX/snowblossom/rain/rain_3.png", count=20, xspeed=(0, 7), yspeed=(1300, 1600), start=1.0, fast=True, horizontal=False, border=50) alpha 0.5 zoom 1.0
 
-# Heavy snow effect using Ren'Py's snowblossom with custom snowflakes
+# Heavy rain effect using SnowBlossom
+screen rain_heavy(x=0, y=0):
+    layer "sfx"
+    frame:
+        xpos x
+        ypos y
+        background None
+        
+        # Grey filter overlay for gloomy atmosphere (slightly darker for heavy rain)
+        add Solid("#303030") alpha 0.2
+        
+        # Heavy rain using SnowBlossom with rain drops - extremely fast aggressive downward movement with high density, varied transparency, and size variation
+        add SnowBlossom("images/FX/snowblossom/rain/rain_4.png", count=80, xspeed=(0, 8), yspeed=(1400, 1800), start=0, fast=True, horizontal=False, border=50) alpha 0.3 zoom 1.2
+        add SnowBlossom("images/FX/snowblossom/rain/rain_5.png", count=70, xspeed=(0, 5), yspeed=(1300, 1700), start=0.2, fast=True, horizontal=False, border=50) alpha 0.2 zoom 0.9
+        add SnowBlossom("images/FX/snowblossom/rain/rain_6.png", count=65, xspeed=(0, 10), yspeed=(1500, 1900), start=0.4, fast=True, horizontal=False, border=50) alpha 0.35 zoom 1.0
+        add SnowBlossom("images/FX/snowblossom/rain/rain_1.png", count=60, xspeed=(0, 6), yspeed=(1200, 1600), start=0.6, fast=True, horizontal=False, border=50) alpha 0.15 zoom 0.7
+        add SnowBlossom("images/FX/snowblossom/rain/rain_2.png", count=55, xspeed=(0, 4), yspeed=(1350, 1750), start=0.8, fast=True, horizontal=False, border=50) alpha 0.25 zoom 1.1
+
+# Light snow effect using SnowBlossom
+screen snow_light(x=0, y=0):
+    layer "sfx"
+    frame:
+        xpos x
+        ypos y
+        background None
+        
+        # Light snow using SnowBlossom with custom snowflake assets
+        add SnowBlossom("images/FX/snowblossom/snow/snow_1.png", count=50, xspeed=(-40, 40), yspeed=(60, 160), start=0, fast=True, horizontal=False)
+        add SnowBlossom("images/FX/snowblossom/snow/snow_2.png", count=40, xspeed=(-35, 35), yspeed=(50, 140), start=0.5, fast=True, horizontal=False)
+        add SnowBlossom("images/FX/snowblossom/snow/snow_3.png", count=35, xspeed=(-45, 45), yspeed=(70, 170), start=1.0, fast=True, horizontal=False)
+
+# Heavy snow effect using SnowBlossom
 screen snow_heavy(x=0, y=0, y_offset=0):
-    zorder 100
+    layer "sfx"
     frame:
         xpos x
         ypos y + y_offset
         background None
         
-        # Heavy snow using snowblossom with custom snowflake assets
-        add SnowBlossom("images/FX/png/snow/snow_4.png", count=80, xspeed=(30, 60), yspeed=(150, 250), start=0, fast=True, horizontal=True)
-        add SnowBlossom("images/FX/png/snow/snow_5.png", count=70, xspeed=(25, 55), yspeed=(130, 230), start=0.3, fast=True, horizontal=True)
-        add SnowBlossom("images/FX/png/snow/snow_6.png", count=65, xspeed=(35, 65), yspeed=(170, 270), start=0.6, fast=True, horizontal=True)
-        add SnowBlossom("images/FX/png/snow/snow_7.png", count=60, xspeed=(20, 50), yspeed=(110, 210), start=0.9, fast=True, horizontal=True)
+        # Heavy snow using SnowBlossom with custom snowflake assets - varied sizes
+        add SnowBlossom("images/FX/snowblossom/snow/snow_4.png", count=120, xspeed=(-60,60), yspeed=(70,40), start=0, fast=True, horizontal=False) zoom 1.4
+        add SnowBlossom("images/FX/snowblossom/snow/snow_5.png", count=100, xspeed=(-50,50), yspeed=(60, 130), start=0.2, fast=True, horizontal=False) zoom 0.8
+        add SnowBlossom("images/FX/snowblossom/snow/snow_6.png", count=90, xspeed=(-70,70), yspeed=(80, 150), start=0.4, fast=True, horizontal=False) zoom 1.2
+        add SnowBlossom("images/FX/snowblossom/snow/snow_7.png", count=80, xspeed=(-40,40), yspeed=(50, 120), start=0.6, fast=True, horizontal=False) zoom 0.6
+        add SnowBlossom("images/FX/snowblossom/snow/snow_1.png", count=70, xspeed=(-55,55), yspeed=(65, 135), start=0.8, fast=True, horizontal=False) zoom 1.0
+        add SnowBlossom("images/FX/snowblossom/snow/snow_2.png", count=60, xspeed=(-45,45), yspeed=(75, 145), start=1.0, fast=True, horizontal=False) zoom 1.6
+        add SnowBlossom("images/FX/snowblossom/snow/snow_3.png", count=50, xspeed=(-65,65), yspeed=(55, 125), start=1.2, fast=True, horizontal=False) zoom 0.7
 
-# Atmospheric Effects
+# Blizzard effect using SnowBlossom
+screen blizzard(x=0, y=0, y_offset=0):
+    layer "sfx"
+    frame:
+        xpos x
+        ypos y + y_offset
+        background None
+        
+        # Bluish-grey filter overlay for blustery atmosphere
+        add Solid("#2a3a4a") alpha 0.25        
+        # Blizzard using SnowBlossom with custom snowflake assets - intense varied sizes and speeds
+        add SnowBlossom("images/FX/snowblossom/snow/snow_4.png", count=100, xspeed=(-200, 200), yspeed=(400, 700), start=0, fast=True, horizontal=False) zoom 2.0
+        add SnowBlossom("images/FX/snowblossom/snow/snow_5.png", count=90, xspeed=(-180, 180), yspeed=(350, 650), start=0.1, fast=True, horizontal=False) zoom 0.7
+        add SnowBlossom("images/FX/snowblossom/snow/snow_6.png", count=80, xspeed=(-220, 220), yspeed=(500, 900), start=0.2, fast=True, horizontal=False) zoom 1.8
+        add SnowBlossom("images/FX/snowblossom/snow/snow_7.png", count=70, xspeed=(-160, 160), yspeed=(300, 600), start=0.3, fast=True, horizontal=False) zoom 0.4
+        add SnowBlossom("images/FX/snowblossom/snow/snow_1.png", count=65, xspeed=(-210, 210), yspeed=(450, 800), start=0.4, fast=True, horizontal=False) zoom 1.5
+        add SnowBlossom("images/FX/snowblossom/snow/snow_2.png", count=60, xspeed=(-150, 150), yspeed=(600, 1000), start=0.5, fast=True, horizontal=False) zoom 2.5
+        add SnowBlossom("images/FX/snowblossom/snow/snow_3.png", count=55, xspeed=(-230, 230), yspeed=(350, 900), start=0.6, fast=True, horizontal=False) zoom 0.3
+
+# Atmospheric Effects using PNG sequences
 # Fog effect
-screen fog(x=0, y=0, y_offset=-100, vertical_tile=False):
-    zorder 100
-    if vertical_tile:
-        add tiled_screen_effect("Fog", x, y, True, y_offset, True)[0]
-        add tiled_screen_effect("Fog", x, y, True, y_offset, True)[1]
-    else:
-        use screen_effect("Fog", x, y, True, y_offset, True)
+transform fog_offset:
+    time 0.5
+
+# Layered fog effect using SnowBlossom
+screen fog_light(x=0, y=0, alpha=0.85):
+    layer "sfx"
+    frame:
+        xpos x
+        ypos y
+        background None
+
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0000.png", count=18, border=800, yspeed=(8, -8), xspeed=(40, -40), start=0, fast=True, horizontal=True) alpha alpha
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0001.png", count=16, border=700, yspeed=(-12, -4), xspeed=(30, -30), start=0.3, fast=True, horizontal=True) alpha alpha
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0002.png", count=20, border=900, yspeed=(6, -10), xspeed=(50, -50), start=0.6, fast=True, horizontal=True) alpha alpha
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0003.png", count=14, border=850, yspeed=(10, -6), xspeed=(35, -35), start=0.9, fast=True, horizontal=True) alpha alpha
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0004.png", count=15, border=750, yspeed=(-8, 8), xspeed=(45, -45), start=1.2, fast=True, horizontal=True) alpha alpha
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0005.png", count=13, border=950, yspeed=(7, -7), xspeed=(38, -38), start=1.5, fast=True, horizontal=True) alpha alpha
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0006.png", count=17, border=800, yspeed=(-9, 9), xspeed=(42, -42), start=1.8, fast=True, horizontal=True) alpha alpha
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0007.png", count=12, border=700, yspeed=(11, -11), xspeed=(36, -36), start=2.1, fast=True, horizontal=True) alpha alpha
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0008.png", count=19, border=850, yspeed=(-10, 10), xspeed=(44, -44), start=2.4, fast=True, horizontal=True) alpha alpha
+
+# Heavy fog effect using SnowBlossom
+screen fog_heavy(x=0, y=0, alpha=1.0):
+    layer "sfx"
+    frame:
+        xpos x
+        ypos y
+        background None
+
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0000.png", count=48, border=400, yspeed=(12, -12), xspeed=(60, -60), start=0, fast=True, horizontal=True) alpha alpha
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0001.png", count=42, border=350, yspeed=(-18, -8), xspeed=(50, -50), start=0.3, fast=True, horizontal=True) alpha alpha
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0002.png", count=54, border=500, yspeed=(10, -16), xspeed=(70, -70), start=0.6, fast=True, horizontal=True) alpha alpha
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0003.png", count=38, border=450, yspeed=(14, -10), xspeed=(55, -55), start=0.9, fast=True, horizontal=True) alpha alpha
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0004.png", count=40, border=300, yspeed=(-14, 14), xspeed=(65, -65), start=1.2, fast=True, horizontal=True) alpha alpha
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0005.png", count=34, border=550, yspeed=(13, -13), xspeed=(58, -58), start=1.5, fast=True, horizontal=True) alpha alpha
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0006.png", count=45, border=400, yspeed=(-15, 15), xspeed=(62, -62), start=1.8, fast=True, horizontal=True) alpha alpha
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0007.png", count=36, border=350, yspeed=(16, -16), xspeed=(56, -56), start=2.1, fast=True, horizontal=True) alpha alpha
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0008.png", count=52, border=450, yspeed=(-13, 13), xspeed=(64, -64), start=2.4, fast=True, horizontal=True) alpha alpha
 
 # Underwater effect
 screen underwater(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("Underwater", x, y, True, y_offset, True)
+    layer "sfx"
+    add underwater_anim xpos x ypos y + y_offset
 
 # God ray effect (left)
 screen godray_left(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("GodRay_L", x, y, True, y_offset, True)
+    layer "sfx"
+    add godrays_anim xpos x ypos y + y_offset
 
 # God ray effect (right)
 screen godray_right(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("GodRay_R", x, y, True, y_offset, True)
+    layer "sfx"
+    add godrays_r_anim xpos x ypos y + y_offset
 
-# Nature Effects
+# Nature Effects using video
 # Falling leaves effect
 screen leaves(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("Leaves", x, y, True, y_offset, True)
+    layer "sfx"
+    add leaves_anim xpos x ypos y + y_offset
 
 # Cherry blossoms effect
 screen blossoms(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("Blossoms", x, y, True, y_offset, True)
+    layer "sfx"
+    add blossom_anim xpos x ypos y + y_offset
 
-# Fireflies effect
+# Fireflies effect using SnowBlossom
 screen fireflies(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("Fireflies", x, y, True, y_offset, True)
+    layer "sfx"
+    frame:
+        xpos x
+        ypos y + y_offset
+        background None
+        
+        # Fireflies using SnowBlossom with firefly assets
+        add SnowBlossom("images/FX/snowblossom/fireflies/fireflies_1.png", count=20, xspeed=(10, 30), yspeed=(20, 60), start=0, fast=True, horizontal=True)
+        add SnowBlossom("images/FX/snowblossom/fireflies/fireflies_2.png", count=15, xspeed=(15, 35), yspeed=(15, 55), start=0.5, fast=True, horizontal=True)
+        add SnowBlossom("images/FX/snowblossom/fireflies/fireflies_3.png", count=12, xspeed=(20, 40), yspeed=(25, 65), start=1.0, fast=True, horizontal=True)
 
-# Star Effects (Multiple Colors)
+# Star Effects using video (Multiple Colors)
 # Blue stars effect
 screen stars_blue(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("Stars_blue", x, y, True, y_offset, True)
+    layer "sfx"
+    add stars_blue_anim xpos x ypos y + y_offset
 
 # Red stars effect
 screen stars_red(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("Stars_red", x, y, True, y_offset, True)
+    layer "sfx"
+    add stars_red_anim xpos x ypos y + y_offset
 
 # Green stars effect
 screen stars_green(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("Stars_green", x, y, True, y_offset, True)
+    layer "sfx"
+    add stars_green_anim xpos x ypos y + y_offset
 
 # Yellow stars effect
 screen stars_yellow(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("Stars_yellow", x, y, True, y_offset, True)
+    layer "sfx"
+    add stars_yellow_anim xpos x ypos y + y_offset
 
 # Purple stars effect
 screen stars_purple(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("Stars_purple", x, y, True, y_offset, True)
+    layer "sfx"
+    add stars_purple_anim xpos x ypos y + y_offset
 
 # Pink stars effect
 screen stars_pink(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("Stars_pink", x, y, True, y_offset, True)
+    layer "sfx"
+    add stars_pink_anim xpos x ypos y + y_offset
 
-# Alternative star effects using different blend approach
-# Blue stars effect (alternative)
-screen stars_blue_alt(x=0, y=0):
-    use webm_effect_alt("Stars_blue", x, y, True)
-
-# Purple stars effect (alternative)
-screen stars_purple_alt(x=0, y=0):
-    use webm_effect_alt("Stars_purple", x, y, True)
-
-# Sparkle effects (alternative)
-screen sparkle_blue_alt(x=0, y=0):
-    use webm_effect_alt("Sparkle_blue", x, y, True)
-
-# Sparkle Effects (Multiple Colors)
+# Sparkle Effects using video (Multiple Colors)
 # Blue sparkle effect
-screen sparkle_blue(x=0, y=0, y_offset=-100, vertical_tile=False):
-    zorder 100
-    # y_offset can be fine-tuned for alignment
-    if vertical_tile:
-        add tiled_screen_effect("Sparkle_blue", x, y, True, y_offset, True)[0]
-        add tiled_screen_effect("Sparkle_blue", x, y, True, y_offset, True)[1]
-    else:
-        use screen_effect("Sparkle_blue", x, y, True, y_offset, True)
+screen sparkle_blue(x=0, y=0, y_offset=-100):
+    layer "sfx"
+    add sparkle_blue_anim xpos x ypos y + y_offset
 
 # Red sparkle effect
 screen sparkle_red(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("Sparkle_red", x, y, True, y_offset, True)
+    layer "sfx"
+    add sparkle_red_anim xpos x ypos y + y_offset
 
 # Green sparkle effect
 screen sparkle_green(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("Sparkle_green", x, y, True, y_offset, True)
+    layer "sfx"
+    add sparkle_green_anim xpos x ypos y + y_offset
 
 # Yellow sparkle effect
 screen sparkle_yellow(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("Sparkle_yellow", x, y, True, y_offset, True)
+    layer "sfx"
+    add sparkle_yellow_anim xpos x ypos y + y_offset
 
 # Purple sparkle effect
 screen sparkle_purple(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("Sparkle_purple", x, y, True, y_offset, True)
+    layer "sfx"
+    add sparkle_purple_anim xpos x ypos y + y_offset
 
 # Pink sparkle effect
 screen sparkle_pink(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("Sparkle_pink", x, y, True, y_offset, True)
+    layer "sfx"
+    add sparkle_pink_anim xpos x ypos y + y_offset
 
-# ---
-# Portal Effects (Multiple Colors)
+# Portal Effects using video (Multiple Colors)
 # Blue portal effect
 screen portal_blue(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("Portal_blue", x, y, True, y_offset, True)
+    layer "sfx"
+    add portal_blue_anim xpos x ypos y + y_offset
 
 # Red portal effect
 screen portal_red(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("Portal_red", x, y, True, y_offset, True)
+    layer "sfx"
+    add portal_red_anim xpos x ypos y + y_offset
 
 # Green portal effect
 screen portal_green(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("Portal_green", x, y, True, y_offset, True)
+    layer "sfx"
+    add portal_green_anim xpos x ypos y + y_offset
 
 # Yellow portal effect
 screen portal_yellow(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("Portal_yellow", x, y, True, y_offset, True)
+    layer "sfx"
+    add portal_yellow_anim xpos x ypos y + y_offset
 
 # Purple portal effect
 screen portal_purple(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("Portal_purple", x, y, True, y_offset, True)
+    layer "sfx"
+    add portal_purple_anim xpos x ypos y + y_offset
 
 # Pink portal effect
 screen portal_pink(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("Portal_pink", x, y, True, y_offset, True)
+    layer "sfx"
+    add portal_pink_anim xpos x ypos y + y_offset
 
-# Plasma Effects (Multiple Colors)
+# Plasma Effects using video (Multiple Colors)
 # Blue plasma effect
 screen plasma_blue(x=0, y=0, y_offset=0):
-    zorder 100
-    use screen_effect("Plasma_blue", x, y, True, y_offset, True)
+    layer "sfx"
+    add plasma_blue_anim xpos x ypos y + y_offset
 
 # Red plasma effect
 screen plasma_red(x=0, y=0, y_offset=0):
-    zorder 100
-    use screen_effect("Plasma_red", x, y, True, y_offset, True)
+    layer "sfx"
+    add plasma_red_anim xpos x ypos y + y_offset
 
 # Green plasma effect
 screen plasma_green(x=0, y=0, y_offset=0):
-    zorder 100
-    use screen_effect("Plasma_green", x, y, True, y_offset, True)
+    layer "sfx"
+    add plasma_green_anim xpos x ypos y + y_offset
 
 # Yellow plasma effect
 screen plasma_yellow(x=0, y=0, y_offset=0):
-    zorder 100
-    use screen_effect("Plasma_yellow", x, y, True, y_offset, True)
+    layer "sfx"
+    add plasma_yellow_anim xpos x ypos y + y_offset
 
 # Purple plasma effect
 screen plasma_purple(x=0, y=0, y_offset=0):
-    zorder 100
-    use screen_effect("Plasma_purple", x, y, True, y_offset, True)
+    layer "sfx"
+    add plasma_purple_anim xpos x ypos y + y_offset
 
 # White plasma effect
 screen plasma_white(x=0, y=0, y_offset=0):
-    zorder 100
-    use screen_effect("Plasma_white", x, y, True, y_offset, True)
+    layer "sfx"
+    add plasma_white_anim xpos x ypos y + y_offset
 
-# Confetti Effects
+# Confetti Effects using video
 # Warm colored confetti effect
 screen confetti_warm(x=0, y=0, y_offset=-50):
-    zorder 100
-    use screen_effect("Confetti_warm", x, y, True, y_offset, True)
+    layer "sfx"
+    add confetti_warm_anim xpos x ypos y + y_offset
 
 # Cool colored confetti effect
 screen confetti_cool(x=0, y=0, y_offset=-50):
-    zorder 100
-    use screen_effect("Confetti_cool", x, y, True, y_offset, True)
+    layer "sfx"
+    add confetti_cool_anim xpos x ypos y + y_offset
 
 # Colorful confetti effect
 screen confetti_colorful(x=0, y=0, y_offset=-50):
-    zorder 100
-    use screen_effect("Confetti_colorful", x, y, True, y_offset, True)
+    layer "sfx"
+    add confetti_colorful_anim xpos x ypos y + y_offset
 
-# Special Effects
+# Special Effects using video
 # Matrix-style effect
 screen matrix(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("Matrix", x, y, True, y_offset, True)
+    layer "sfx"
+    add matrix_anim xpos x ypos y + y_offset
 
 # Night sky effect
 screen night_sky(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("NightSky", x, y, True, y_offset, True)
+    layer "sfx"
+    add nightsky_anim xpos x ypos y + y_offset
 
 # Shooting star effect
 screen shooting_star(x=0, y=0, y_offset=-100):
-    zorder 100
-    use screen_effect("NightSky_ShootingStar", x, y, True, y_offset, True)
+    layer "sfx"
+    add shootingstar_anim xpos x ypos y + y_offset
+
+# Dust effect using SnowBlossom
+screen dust(x=0, y=0, y_offset=-100):
+    layer "sfx"
+    frame:
+        xpos x
+        ypos y + y_offset
+        background None
+        
+        # Dust particles using SnowBlossom
+        add SnowBlossom("images/FX/snowblossom/dust/dust_1.png", count=40, xspeed=(5, 15), yspeed=(10, 30), start=0, fast=True, horizontal=True)
+        add SnowBlossom("images/FX/snowblossom/dust/dust_2.png", count=35, xspeed=(8, 18), yspeed=(8, 28), start=0.3, fast=True, horizontal=True)
+        add SnowBlossom("images/FX/snowblossom/dust/dust_3.png", count=30, xspeed=(12, 22), yspeed=(12, 32), start=0.6, fast=True, horizontal=True)
+
+# Petals effect using SnowBlossom
+screen petals(x=0, y=0, y_offset=-100):
+    layer "sfx"
+    frame:
+        xpos x
+        ypos y + y_offset
+        background None
+        
+        # Falling petals using SnowBlossom
+        add SnowBlossom("images/FX/snowblossom/petals/petals_1.png", count=25, xspeed=(15, 35), yspeed=(50, 100), start=0, fast=True, horizontal=False)
+        add SnowBlossom("images/FX/snowblossom/petals/petals_2.png", count=20, xspeed=(20, 40), yspeed=(60, 110), start=0.4, fast=True, horizontal=False)
+        add SnowBlossom("images/FX/snowblossom/petals/petals_3.png", count=18, xspeed=(25, 45), yspeed=(70, 120), start=0.8, fast=True, horizontal=False)
 
 # Composite Effects (Multiple effects combined)
 # Combined magical atmosphere effect
 screen magical_atmosphere(x=0, y=0):
+    layer "sfx"
     frame:
         xpos x
         ypos y
         background None
         
         # Multiple effects layered
-        use sparkle_blue(0, 0)
-        use stars_purple(0, 0)
+        add sparkle_blue_anim xpos 0 ypos 0
+        add stars_purple_anim xpos 0 ypos 0
         use fireflies(0, 0)
 
 # Combined storm weather effect
 screen storm_weather(x=0, y=0):
+    layer "sfx"
     frame:
         xpos x
         ypos y
         background None
         
         # Multiple effects layered
-        use rain_heavy(0, 0)
-        use fog(0, 0)
+        use rain_heavy(0,0)
+        add fog_anim xpos 0 ypos 0
 
 # Combined celebration effect
 screen celebration(x=0, y=0):
+    layer "sfx"
     frame:
         xpos x
         ypos y
         background None
         
         # Multiple effects layered
-        use confetti_colorful(0, 0)
-        use sparkle_yellow(0, 0)
-        use stars_pink(0, 0) 
+        add confetti_colorful_anim xpos 0 ypos 0
+        add sparkle_yellow_anim xpos 0 ypos 0
+        add stars_pink_anim xpos 0 ypos 0
 
-# PNG Effects System
-# Handles sprite sheet animations from various effect categories
-
-init python:
-    # PNG Effect Categories and their frame counts
-    PNG_EFFECTS = {
-        "light": {
-            "cast1": {"frames": 15, "fps": 30, "file": "30FPS_ASLight_01_Cast.png"},
-            "cast2": {"frames": 23, "fps": 30, "file": "30FPS_ASLight_02_Cast2.png"},
-            "glare": {"frames": 15, "fps": 30, "file": "30FPS_ASLight_03_Glare.png"},
-            "ray": {"frames": 15, "fps": 30, "file": "30FPS_ASLight_04_Ray.png"},
-            "sparkle": {"frames": 30, "fps": 30, "file": "30FPS_ASLight_05_Sparkle.png"},
-            "scintillation": {"frames": 30, "fps": 30, "file": "30FPS_ASLight_06_Scintillation.png"},
-            "gleam": {"frames": 38, "fps": 30, "file": "30FPS_ASLight_07_Gleam.png"},
-            "twinkle": {"frames": 45, "fps": 30, "file": "30FPS_ASLight_08_Twinkle.png"},
-            "photon": {"frames": 45, "fps": 30, "file": "30FPS_ASLight_09_Photon.png"},
-            "radiance": {"frames": 90, "fps": 30, "file": "30FPS_ASLight_10_Radiance.png"}
-        },
-        "wind": {
-            "cast": {"frames": 15, "fps": 30, "file": "30FPS_ASWind_01_Cast.png"},
-            "cast2": {"frames": 23, "fps": 30, "file": "30FPS_ASWind_02_Cast2.png"},
-            "whirlwind": {"frames": 15, "fps": 30, "file": "30FPS_ASWind_03_Whirlwind.png"},
-            "breeze": {"frames": 15, "fps": 30, "file": "30FPS_ASWind_04_Breeze.png"},
-            "twister": {"frames": 30, "fps": 30, "file": "30FPS_ASWind_05_Twister.png"},
-            "gust": {"frames": 30, "fps": 30, "file": "30FPS_ASWind_06_Gust.png"},
-            "vacuum": {"frames": 38, "fps": 30, "file": "30FPS_ASWind_07_Vacuum.png"},
-            "cyclone": {"frames": 45, "fps": 30, "file": "30FPS_ASWind_08_Cyclone.png"},
-            "updraft": {"frames": 45, "fps": 30, "file": "30FPS_ASWind_09_Updraft.png"},
-            "tornado": {"frames": 90, "fps": 30, "file": "30FPS_ASWind_10_Tornado.png"}
-        }
-        # Add more categories as needed: ice, technology, esoteric, curses, nocturne, infernal
-    }
-    
-    # Sprite sheet configuration
-    SPRITE_SHEET_CONFIG = {
-        "frame_width": 192,
-        "frame_height": 192,
-        "columns": 5,
-        "rows": 20  # Maximum rows
-    }
-
-# Base PNG effect display
-# Generic PNG effect display using sprite sheets
-# Parameters:
-# - category: Effect category (light, wind, ice, etc.)
-# - effect_name: Name of the effect within the category
-# - x, y: Position coordinates
-# - fps: Frames per second (30 or 60)
-# - loop: Whether the effect should loop
-screen png_effect(category, effect_name, x=0, y=0, fps=30, loop=True):
-    frame:
-        xpos x
-        ypos y
-        background None
-        
-        if category in PNG_EFFECTS and effect_name in PNG_EFFECTS[category]:
-            $ effect_data = PNG_EFFECTS[category][effect_name]
-            $ frame_count = effect_data["frames"]
-            $ frame_duration = 1.0 / fps
-            
-            # Create animated sprite from sprite sheet
-            add "images/FX/png/" + category + "/" + str(fps) + "FPS/" + effect_data["file"]:
-                size (SPRITE_SHEET_CONFIG["frame_width"], SPRITE_SHEET_CONFIG["frame_height"])
-                # For now, just show the first frame - sprite sheet animation will be implemented later
-                # when we have a proper ATL-based solution
-
-# Note: PNG sprite sheet animation will be implemented using proper ATL transforms
-# when we have individual frame images or a better sprite sheet solution
-
-# Light Effects
-# Light casting animation 1
-screen light_cast1(x=0, y=0, fps=30):
-    use png_effect("light", "cast1", x, y, fps, True)
-
-# Light casting animation 2
-screen light_cast2(x=0, y=0, fps=30):
-    use png_effect("light", "cast2", x, y, fps, True)
-
-# Light glare effect
-screen light_glare(x=0, y=0, fps=30):
-    use png_effect("light", "glare", x, y, fps, True)
-
-# Light ray effect
-screen light_ray(x=0, y=0, fps=30):
-    use png_effect("light", "ray", x, y, fps, True)
-
-# Light sparkle effect
-screen light_sparkle(x=0, y=0, fps=30):
-    use png_effect("light", "sparkle", x, y, fps, True)
-
-# Light scintillation effect
-screen light_scintillation(x=0, y=0, fps=30):
-    use png_effect("light", "scintillation", x, y, fps, True)
-
-# Light gleam effect
-screen light_gleam(x=0, y=0, fps=30):
-    use png_effect("light", "gleam", x, y, fps, True)
-
-# Light twinkle effect
-screen light_twinkle(x=0, y=0, fps=30):
-    use png_effect("light", "twinkle", x, y, fps, True)
-
-# Light photon effect (full screen)
-screen light_photon(x=0, y=0, fps=30):
-    use png_effect("light", "photon", x, y, fps, True)
-
-# Light radiance effect (full screen)
-screen light_radiance(x=0, y=0, fps=30):
-    use png_effect("light", "radiance", x, y, fps, True)
-
-# Wind Effects
-# Wind casting animation
-screen wind_cast(x=0, y=0, fps=30):
-    use png_effect("wind", "cast", x, y, fps, True)
-
-# Wind casting animation 2
-screen wind_cast2(x=0, y=0, fps=30):
-    use png_effect("wind", "cast2", x, y, fps, True)
-
-# Wind whirlwind effect
-screen wind_whirlwind(x=0, y=0, fps=30):
-    use png_effect("wind", "whirlwind", x, y, fps, True)
-
-# Wind breeze effect
-screen wind_breeze(x=0, y=0, fps=30):
-    use png_effect("wind", "breeze", x, y, fps, True)
-
-# Wind twister effect
-screen wind_twister(x=0, y=0, fps=30):
-    use png_effect("wind", "twister", x, y, fps, True)
-
-# Wind gust effect
-screen wind_gust(x=0, y=0, fps=30):
-    use png_effect("wind", "gust", x, y, fps, True)
-
-# Wind vacuum effect
-screen wind_vacuum(x=0, y=0, fps=30):
-    use png_effect("wind", "vacuum", x, y, fps, True)
-
-# Wind cyclone effect
-screen wind_cyclone(x=0, y=0, fps=30):
-    use png_effect("wind", "cyclone", x, y, fps, True)
-
-# Wind updraft effect
-screen wind_updraft(x=0, y=0, fps=30):
-    use png_effect("wind", "updraft", x, y, fps, True)
-
-# Wind tornado effect (full screen)
-screen wind_tornado(x=0, y=0, fps=30):
-    use png_effect("wind", "tornado", x, y, fps, True)
-
-# Composite Light Effects
-# Combined light magical attack
-screen light_magical_attack(x=0, y=0, fps=30):
-    frame:
-        xpos x
-        ypos y
-        background None
-        
-        use light_cast1(0, 0, fps)
-        use light_ray(0, 0, fps)
-        use light_sparkle(0, 0, fps)
-
-# Combined light healing effect
-screen light_healing(x=0, y=0, fps=30):
-    frame:
-        xpos x
-        ypos y
-        background None
-        
-        use light_gleam(0, 0, fps)
-        use light_twinkle(0, 0, fps)
-        use light_scintillation(0, 0, fps)
-
-# Composite Wind Effects
-# Combined wind storm effect
-screen wind_storm(x=0, y=0, fps=30):
-    frame:
-        xpos x
-        ypos y
-        background None
-        
-        use wind_whirlwind(0, 0, fps)
-        use wind_gust(0, 0, fps)
-        use wind_cyclone(0, 0, fps)
-
-# Combined gentle wind effect
-screen wind_gentle_breeze(x=0, y=0, fps=30):
-    frame:
-        xpos x
-        ypos y
-        background None
-        
-        use wind_breeze(0, 0, fps)
-        use wind_twister(0, 0, fps) 
-
-# PNG Effects Helper Functions
-# Provides easy-to-use functions for PNG sprite sheet animations
-
+# Helper Functions for PNG Effects
 init python:
     # PNG Effect Helper Functions
-    def show_png_effect(category, effect_name, x=0, y=0, fps=30):
-        """Helper function to show PNG effects"""
-        screen_name = f"{category}_{effect_name}"
+    def show_png_effect(effect_name, x=0, y=0, fps=30):
+        """Helper function to show PNG sequence effects"""
         if hasattr(renpy, 'show_screen'):
-            renpy.show_screen(screen_name, x=x, y=y, fps=fps)
+            renpy.show_screen(effect_name, x=x, y=y, fps=fps)
     
-    def hide_png_effect(category, effect_name):
-        """Helper function to hide PNG effects"""
-        screen_name = f"{category}_{effect_name}"
+    def hide_png_effect(effect_name):
+        """Helper function to hide PNG sequence effects"""
         if hasattr(renpy, 'hide_screen'):
-            renpy.hide_screen(screen_name)
+            renpy.hide_screen(effect_name)
     
-    # Light effect helpers
-    def show_light_effect(effect_name, x=0, y=0, fps=30):
-        """Helper function to show light effects"""
-        light_effects = {
-            "cast1": "light_cast1",
-            "cast2": "light_cast2", 
-            "glare": "light_glare",
-            "ray": "light_ray",
-            "sparkle": "light_sparkle",
-            "scintillation": "light_scintillation",
-            "gleam": "light_gleam",
-            "twinkle": "light_twinkle",
-            "photon": "light_photon",
-            "radiance": "light_radiance"
+    # Weather effect helpers
+    def show_weather_effect(effect_name, x=0, y=0, y_offset=0):
+        """Helper function to show weather effects"""
+        weather_effects = {
+            "rain_light": "rain_light",
+            "rain_heavy": "rain_heavy",
+            "snow_light": "snow_light",
+            "snow_heavy": "snow_heavy"
         }
-        if effect_name in light_effects:
-            renpy.show_screen(light_effects[effect_name], x=x, y=y, fps=fps)
+        if effect_name in weather_effects:
+            if effect_name == "snow_heavy":
+                renpy.show_screen(weather_effects[effect_name], x=x, y=y, y_offset=y_offset)
+            else:
+                renpy.show_screen(weather_effects[effect_name], x=x, y=y)
     
-    def hide_light_effect(effect_name):
-        """Helper function to hide light effects"""
-        light_effects = {
-            "cast1": "light_cast1",
-            "cast2": "light_cast2",
-            "glare": "light_glare", 
-            "ray": "light_ray",
-            "sparkle": "light_sparkle",
-            "scintillation": "light_scintillation",
-            "gleam": "light_gleam",
-            "twinkle": "light_twinkle",
-            "photon": "light_photon",
-            "radiance": "light_radiance"
+    def hide_weather_effect(effect_name):
+        """Helper function to hide weather effects"""
+        weather_effects = {
+            "rain_light": "rain_light",
+            "rain_heavy": "rain_heavy",
+            "snow_light": "snow_light",
+            "snow_heavy": "snow_heavy"
         }
-        if effect_name in light_effects:
-            renpy.hide_screen(light_effects[effect_name])
+        if effect_name in weather_effects:
+            renpy.hide_screen(weather_effects[effect_name])
     
-    # Wind effect helpers
-    def show_wind_effect(effect_name, x=0, y=0, fps=30):
-        """Helper function to show wind effects"""
-        wind_effects = {
-            "cast": "wind_cast",
-            "cast2": "wind_cast2",
-            "whirlwind": "wind_whirlwind", 
-            "breeze": "wind_breeze",
-            "twister": "wind_twister",
-            "gust": "wind_gust",
-            "vacuum": "wind_vacuum",
-            "cyclone": "wind_cyclone",
-            "updraft": "wind_updraft",
-            "tornado": "wind_tornado"
-        }
-        if effect_name in wind_effects:
-            renpy.show_screen(wind_effects[effect_name], x=x, y=y, fps=fps)
-    
-    def hide_wind_effect(effect_name):
-        """Helper function to hide wind effects"""
-        wind_effects = {
-            "cast": "wind_cast",
-            "cast2": "wind_cast2",
-            "whirlwind": "wind_whirlwind",
-            "breeze": "wind_breeze", 
-            "twister": "wind_twister",
-            "gust": "wind_gust",
-            "vacuum": "wind_vacuum",
-            "cyclone": "wind_cyclone",
-            "updraft": "wind_updraft",
-            "tornado": "wind_tornado"
-        }
-        if effect_name in wind_effects:
-            renpy.hide_screen(wind_effects[effect_name])
-    
-    # Composite effect helpers
-    def show_light_composite(effect_name, x=0, y=0, fps=30):
-        """Helper function to show light composite effects"""
-        light_composites = {
-            "magical_attack": "light_magical_attack",
-            "healing": "light_healing"
-        }
-        if effect_name in light_composites:
-            renpy.show_screen(light_composites[effect_name], x=x, y=y, fps=fps)
-    
-    def hide_light_composite(effect_name):
-        """Helper function to hide light composite effects"""
-        light_composites = {
-            "magical_attack": "light_magical_attack",
-            "healing": "light_healing"
-        }
-        if effect_name in light_composites:
-            renpy.hide_screen(light_composites[effect_name])
-    
-    def show_wind_composite(effect_name, x=0, y=0, fps=30):
-        """Helper function to show wind composite effects"""
-        wind_composites = {
-            "storm": "wind_storm",
-            "gentle_breeze": "wind_gentle_breeze"
-        }
-        if effect_name in wind_composites:
-            renpy.show_screen(wind_composites[effect_name], x=x, y=y, fps=fps)
-    
-    def hide_wind_composite(effect_name):
-        """Helper function to hide wind composite effects"""
-        wind_composites = {
-            "storm": "wind_storm",
-            "gentle_breeze": "wind_gentle_breeze"
-        }
-        if effect_name in wind_composites:
-            renpy.hide_screen(wind_composites[effect_name])
-    
-    # Utility functions
-    def hide_all_png_effects():
-        """Hide all currently active PNG effects"""
-        all_png_effects = [
-            # Light effects
-            "light_cast1", "light_cast2", "light_glare", "light_ray",
-            "light_sparkle", "light_scintillation", "light_gleam", 
-            "light_twinkle", "light_photon", "light_radiance",
-            # Wind effects
-            "wind_cast", "wind_cast2", "wind_whirlwind", "wind_breeze",
-            "wind_twister", "wind_gust", "wind_vacuum", "wind_cyclone",
-            "wind_updraft", "wind_tornado",
-            # Composite effects
-            "light_magical_attack", "light_healing", "wind_storm", "wind_gentle_breeze"
-        ]
-        
-        for effect in all_png_effects:
-            try:
-                renpy.hide_screen(effect)
-            except:
-                pass  # Screen might not be showing, ignore errors
-    
-    # WebM Effect Helper Functions
-    def show_atmospheric_effect(effect_name, x=0, y=0):
-        """Helper function to show atmospheric WebM effects"""
+    # Atmospheric effect helpers
+    def show_atmospheric_effect(effect_name, x=0, y=0, y_offset=-100):
+        """Helper function to show atmospheric effects"""
         atmospheric_effects = {
             "fog": "fog",
             "underwater": "underwater",
@@ -694,13 +853,15 @@ init python:
             "godray_right": "godray_right",
             "leaves": "leaves",
             "blossoms": "blossoms",
-            "fireflies": "fireflies"
+            "fireflies": "fireflies",
+            "dust": "dust",
+            "petals": "petals"
         }
         if effect_name in atmospheric_effects:
-            renpy.show_screen(atmospheric_effects[effect_name], x=x, y=y)
+            renpy.show_screen(atmospheric_effects[effect_name], x=x, y=y, y_offset=y_offset)
     
     def hide_atmospheric_effect(effect_name):
-        """Helper function to hide atmospheric WebM effects"""
+        """Helper function to hide atmospheric effects"""
         atmospheric_effects = {
             "fog": "fog",
             "underwater": "underwater",
@@ -708,13 +869,16 @@ init python:
             "godray_right": "godray_right",
             "leaves": "leaves",
             "blossoms": "blossoms",
-            "fireflies": "fireflies"
+            "fireflies": "fireflies",
+            "dust": "dust",
+            "petals": "petals"
         }
         if effect_name in atmospheric_effects:
             renpy.hide_screen(atmospheric_effects[effect_name])
     
-    def show_magical_effect(effect_type, color, x=0, y=0, fps=30):
-        """Helper function to show magical WebM effects (stars, sparkles, etc.)"""
+    # Magical effect helpers
+    def show_magical_effect(effect_type, color, x=0, y=0, y_offset=-100):
+        """Helper function to show magical effects (stars, sparkles, etc.)"""
         if effect_type == "stars":
             star_effects = {
                 "blue": "stars_blue",
@@ -725,7 +889,7 @@ init python:
                 "pink": "stars_pink"
             }
             if color in star_effects:
-                renpy.show_screen(star_effects[color], x=x, y=y)
+                renpy.show_screen(star_effects[color], x=x, y=y, y_offset=y_offset)
         elif effect_type == "sparkle":
             sparkle_effects = {
                 "blue": "sparkle_blue",
@@ -736,10 +900,32 @@ init python:
                 "pink": "sparkle_pink"
             }
             if color in sparkle_effects:
-                renpy.show_screen(sparkle_effects[color], x=x, y=y)
+                renpy.show_screen(sparkle_effects[color], x=x, y=y, y_offset=y_offset)
+        elif effect_type == "portal":
+            portal_effects = {
+                "blue": "portal_blue",
+                "red": "portal_red",
+                "green": "portal_green",
+                "yellow": "portal_yellow",
+                "purple": "portal_purple",
+                "pink": "portal_pink"
+            }
+            if color in portal_effects:
+                renpy.show_screen(portal_effects[color], x=x, y=y, y_offset=y_offset)
+        elif effect_type == "plasma":
+            plasma_effects = {
+                "blue": "plasma_blue",
+                "red": "plasma_red",
+                "green": "plasma_green",
+                "yellow": "plasma_yellow",
+                "purple": "plasma_purple",
+                "white": "plasma_white"
+            }
+            if color in plasma_effects:
+                renpy.show_screen(plasma_effects[color], x=x, y=y, y_offset=y_offset)
     
     def hide_magical_effect(effect_type, color):
-        """Helper function to hide magical WebM effects"""
+        """Helper function to hide magical effects"""
         if effect_type == "stars":
             star_effects = {
                 "blue": "stars_blue",
@@ -762,38 +948,86 @@ init python:
             }
             if color in sparkle_effects:
                 renpy.hide_screen(sparkle_effects[color])
+        elif effect_type == "portal":
+            portal_effects = {
+                "blue": "portal_blue",
+                "red": "portal_red",
+                "green": "portal_green",
+                "yellow": "portal_yellow",
+                "purple": "portal_purple",
+                "pink": "portal_pink"
+            }
+            if color in portal_effects:
+                renpy.hide_screen(portal_effects[color])
+        elif effect_type == "plasma":
+            plasma_effects = {
+                "blue": "plasma_blue",
+                "red": "plasma_red",
+                "green": "plasma_green",
+                "yellow": "plasma_yellow",
+                "purple": "plasma_purple",
+                "white": "plasma_white"
+            }
+            if color in plasma_effects:
+                renpy.hide_screen(plasma_effects[color])
     
-    # Snow Effect Helper Functions
-    def show_snow_effect(effect_name, x=0, y=0, y_offset=0):
-        """Helper function to show snow effects"""
-        snow_effects = {
-            "light": "snow_light",
-            "heavy": "snow_heavy"
+    # Special effect helpers
+    def show_special_effect(effect_name, x=0, y=0, y_offset=-100):
+        """Helper function to show special effects"""
+        special_effects = {
+            "matrix": "matrix",
+            "night_sky": "night_sky",
+            "shooting_star": "shooting_star",
+            "confetti_warm": "confetti_warm",
+            "confetti_cool": "confetti_cool",
+            "confetti_colorful": "confetti_colorful"
         }
-        if effect_name in snow_effects:
-            if effect_name == "heavy":
-                renpy.show_screen(snow_effects[effect_name], x=x, y=y, y_offset=y_offset)
-            else:
-                renpy.show_screen(snow_effects[effect_name], x=x, y=y)
+        if effect_name in special_effects:
+            renpy.show_screen(special_effects[effect_name], x=x, y=y, y_offset=y_offset)
     
-    def hide_snow_effect(effect_name):
-        """Helper function to hide snow effects"""
-        snow_effects = {
-            "light": "snow_light",
-            "heavy": "snow_heavy"
+    def hide_special_effect(effect_name):
+        """Helper function to hide special effects"""
+        special_effects = {
+            "matrix": "matrix",
+            "night_sky": "night_sky",
+            "shooting_star": "shooting_star",
+            "confetti_warm": "confetti_warm",
+            "confetti_cool": "confetti_cool",
+            "confetti_colorful": "confetti_colorful"
         }
-        if effect_name in snow_effects:
-            renpy.hide_screen(snow_effects[effect_name])
+        if effect_name in special_effects:
+            renpy.hide_screen(special_effects[effect_name])
     
+    # Composite effect helpers
+    def show_composite_effect(effect_name, x=0, y=0):
+        """Helper function to show composite effects"""
+        composite_effects = {
+            "magical_atmosphere": "magical_atmosphere",
+            "storm_weather": "storm_weather",
+            "celebration": "celebration"
+        }
+        if effect_name in composite_effects:
+            renpy.show_screen(composite_effects[effect_name], x=x, y=y)
+    
+    def hide_composite_effect(effect_name):
+        """Helper function to hide composite effects"""
+        composite_effects = {
+            "magical_atmosphere": "magical_atmosphere",
+            "storm_weather": "storm_weather",
+            "celebration": "celebration"
+        }
+        if effect_name in composite_effects:
+            renpy.hide_screen(composite_effects[effect_name])
+    
+    # Utility functions
     def hide_all_effects():
-        """Hide all effects (both WebM and PNG)"""
-        # Hide WebM effects (from vfx.rpy)
-        all_webm_effects = [
-            # Weather
+        """Hide all currently active effects"""
+        all_effects = [
+            # Weather effects
             "rain_light", "rain_heavy", "snow_light", "snow_heavy",
-            # Atmospheric
+            # Atmospheric effects
             "fog", "underwater", "godray_left", "godray_right",
-            "leaves", "blossoms", "fireflies",
+            "leaves", "blossoms", "fireflies", "dust", "petals",
             # Stars (all colors)
             "stars_blue", "stars_red", "stars_green", "stars_yellow", "stars_purple", "stars_pink",
             # Sparkles (all colors)
@@ -810,12 +1044,26 @@ init python:
             "magical_atmosphere", "storm_weather", "celebration"
         ]
         
-        # Hide WebM effects
-        for effect in all_webm_effects:
+        for effect in all_effects:
             try:
                 renpy.hide_screen(effect)
             except:
-                pass
+                pass  # Screen might not be showing, ignore errors 
+
+# Parallax fog effect using static base + animated layers
+screen fog_parallax(x=0, y=0, alpha=0.8):
+    layer "sfx"
+    frame:
+        xpos x
+        ypos y
+        background None
+
+        # Static fog base layer
+        add "images/FX/parallax/fog_base.png" alpha 1.0
         
-        # Hide PNG effects
-        hide_all_png_effects() 
+        # Animated fog layers on top (reduced alpha for visibility of base)
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0000.png", count=8, border=1200, yspeed=(5, -5), xspeed=(30, -30), start=0, fast=True, horizontal=True) alpha (alpha * 0.15)
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0001.png", count=6, border=1000, yspeed=(-8, -2), xspeed=(25, -25), start=0.5, fast=True, horizontal=True) alpha (alpha * 0.10)
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0002.png", count=10, border=1400, yspeed=(3, -8), xspeed=(35, -35), start=1.0, fast=True, horizontal=True) alpha (alpha * 0.18)
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0003.png", count=7, border=1100, yspeed=(7, -3), xspeed=(28, -28), start=1.5, fast=True, horizontal=True) alpha (alpha * 0.08)
+        add SnowBlossom("images/FX/snowblossom/fog/fog_0004.png", count=9, border=1300, yspeed=(-6, 6), xspeed=(32, -32), start=2.0, fast=True, horizontal=True) alpha (alpha * 0.13) 

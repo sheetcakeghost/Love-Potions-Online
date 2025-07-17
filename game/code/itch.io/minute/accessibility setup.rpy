@@ -27,11 +27,12 @@ default persistent.say_dialogue_kerning = 0
 
 #Set your default font
 #Replace all instances of gui.text_font with persistent.pref_text_font. Append to your say screen.
-default persistent.pref_text_font = "DejaVuSans.ttf"
+default persistent.pref_text_font = "Atkinson_Hyperlegible_Next/AtkinsonHyperlegibleNext-VariableFont_wght.ttf"
 
 #Set your default text size
 #Replace all instances of gui.text_size with persistent.pref_text_size. Append to your say screen.
 default persistent.pref_text_size = 32
+default persistent.pref_text_weight = 400
 
 #Default text color
 #Replace all instances of gui.text_color with persistent.pref_text_color. Append to your say screen.
@@ -54,6 +55,16 @@ init python:
     # For advanced usage, if you do a font size slider you can make these minimum and maximum sizes!
 
     size_dict = {
+        "Atkinson_Hyperlegible_Next/AtkinsonHyperlegibleNext-VariableFont_wght.ttf": {
+            "regular": 32,
+            "large": 36,
+            "line_spacing": 0,
+        },
+        "Atkinson_Hyperlegible_Mono/AtkinsonHyperlegibleMono-VariableFont_wght.ttf": {
+            "regular": 32,
+            "large": 36,
+            "line_spacing": 0,
+        },
         # "filepath" : {"size_scale1" : size in pixels, "size_scale2" : size in pixels...},
         # For advanced usage, you can make these dicts hold any optional arguments you want per font.
         "OpenDyslexic.otf" : {

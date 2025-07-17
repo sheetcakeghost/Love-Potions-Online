@@ -1,5 +1,5 @@
 # Effects Usage Examples
-# Demonstrates how to use the consolidated visual effects system (WebM + PNG)
+# Demonstrates how to use the new video-based effects system
 # All effects are now in vfx.rpy
 
 # Define test backgrounds for proper testing
@@ -8,639 +8,496 @@ image bg testing = "images/bg/testing.jpg"
 # Individual Effects Test - Using testing.jpg background
 label individual_effects_test:
     scene bg testing
+    show spw glitter with dissolve:
+        xalign 0.5 yalign 0.5
+        ease 2.0 yoffset 5
+        ease 2.0 yoffset 0
+        repeat
+    bpw "Hello!"
+    hide spw
+    show pw closedhappy mouthneutral with dissolve:
+        xalign 0.5 yalign 0.5
+        ease 2.0 yoffset 5
+        ease 2.0 yoffset 0
+        repeat
     
-    "Individual Effects Test - Each effect will be shown separately with testing.jpg background"
+    bpw "It's time for some effects!"
     
-    # Weather Effects
-    "Testing light rain effect:"
+    # Weather Effects (SnowBlossom)
+    "Testing light rain effect (SnowBlossom):"
     show screen rain_light
-    "Light rain falls gently across the scene."
+    "Light rain falls gently across the scene using SnowBlossom particles."
     hide screen rain_light
     
-    "Testing heavy rain effect:"
+    "Testing heavy rain effect (SnowBlossom):"
     show screen rain_heavy
-    "Heavy rain pours down dramatically."
+    "Heavy rain pours down dramatically using SnowBlossom particles."
     hide screen rain_heavy
     
-    "Testing light snow effect:"
+    "Testing light snow effect (SnowBlossom):"
     show screen snow_light
-    "Light snowflakes drift down peacefully."
+    "Light snowflakes drift down peacefully using SnowBlossom particles."
     hide screen snow_light
     
-    "Testing heavy snow effect:"
+    "Testing heavy snow effect (SnowBlossom):"
     show screen snow_heavy
-    "Heavy snow blankets the scene."
+    "Heavy snow blankets the scene using SnowBlossom particles."
     hide screen snow_heavy
     
-    # Atmospheric Effects
-    "Testing fog effect:"
-    show screen fog
-    "Mysterious fog rolls in, creating atmosphere."
-    hide screen fog
+    "Testing blizzard effect (SnowBlossom):"
+    show screen blizzard
+    "An intense blizzard rages with varied snowflake sizes and blustery atmosphere using SnowBlossom particles."
+    hide screen blizzard
+
+    "Testing fog effect (SnowBlossom):"
+    show screen fog_light
+    "Mysterious fog rolls in, created with SnowBlossom and transparent PNGs."
+    hide screen fog_light
+
+    "Testing heavy fog effect (SnowBlossom):"
+    show screen fog_heavy
+    "A thick, dense fog covers the scene using many SnowBlossom layers."
+    hide screen fog_heavy
+
+    "Testing underwater effect (Video):"
+    show underwater_anim
+    "The scene takes on an underwater quality using video animation."
+    hide underwater_anim
     
-    "Testing underwater effect:"
-    show screen underwater
-    "The scene takes on an underwater quality."
-    hide screen underwater
+    "Testing left god ray effect (Video):"
+    show godrays_anim
+    "Divine light rays shine from the left using video animation."
+    hide godrays_anim
     
-    "Testing left god ray effect:"
-    show screen godray_left
-    "Divine light rays shine from the left."
-    hide screen godray_left
-    
-    "Testing right god ray effect:"
-    show screen godray_right
-    "Divine light rays shine from the right."
-    hide screen godray_right
+    "Testing right god ray effect (Video):"
+    show godrays_r_anim
+    "Divine light rays shine from the right using video animation."
+    hide godrays_r_anim
     
     # Nature Effects
-    "Testing falling leaves effect:"
-    show screen leaves
-    "Autumn leaves fall gently from above."
-    hide screen leaves
+    "Testing falling leaves effect (Video):"
+    show leaves_anim
+    "Autumn leaves fall gently from above using video animation."
+    hide leaves_anim
     
-    "Testing cherry blossoms effect:"
-    show screen blossoms
-    "Cherry blossoms dance in the breeze."
-    hide screen blossoms
+    "Testing cherry blossoms effect (Video):"
+    show blossom_anim
+    "Cherry blossoms dance in the breeze using video animation."
+    hide blossom_anim
     
-    "Testing fireflies effect:"
+    "Testing fireflies effect (SnowBlossom):"
     show screen fireflies
-    "Magical fireflies light up the night."
+    "Magical fireflies light up the night using SnowBlossom particles."
     hide screen fireflies
     
-    # Star Effects (All Colors)
-    "Testing blue stars effect:"
-    show screen stars_blue
-    "Blue stars twinkle in the sky."
-    hide screen stars_blue
+    "Testing dust effect (SnowBlossom):"
+    show screen dust
+    "Dust particles float through the air using SnowBlossom particles."
+    hide screen dust
     
-    "Testing red stars effect:"
-    show screen stars_red
-    "Red stars glow with warmth."
-    hide screen stars_red
+    "Testing petals effect (SnowBlossom):"
+    show screen petals
+    "Falling petals dance in the wind using SnowBlossom particles."
+    hide screen petals
     
-    "Testing green stars effect:"
-    show screen stars_green
-    "Green stars shimmer with nature's energy."
-    hide screen stars_green
+    # Star Effects (Video - All Colors)
+    "Testing blue stars effect (Video):"
+    show stars_blue_anim
+    "Blue stars twinkle in the sky using video animation."
+    hide stars_blue_anim
     
-    "Testing yellow stars effect:"
-    show screen stars_yellow
-    "Yellow stars shine like distant suns."
-    hide screen stars_yellow
+    "Testing red stars effect (Video):"
+    show stars_red_anim
+    "Red stars glow with warmth using video animation."
+    hide stars_red_anim
     
-    "Testing purple stars effect:"
-    show screen stars_purple
-    "Purple stars pulse with magical energy."
-    hide screen stars_purple
+    "Testing green stars effect (Video):"
+    show stars_green_anim
+    "Green stars shimmer with nature's energy using video animation."
+    hide stars_green_anim
     
-    "Testing pink stars effect:"
-    show screen stars_pink
-    "Pink stars sparkle with romance."
-    hide screen stars_pink
+    "Testing yellow stars effect (Video):"
+    show stars_yellow_anim
+    "Yellow stars shine like distant suns using video animation."
+    hide stars_yellow_anim
     
-    # Sparkle Effects (All Colors)
-    "Testing blue sparkles effect:"
-    show screen sparkle_blue
-    "Blue sparkles dance around the scene."
-    hide screen sparkle_blue
+    "Testing purple stars effect (Video):"
+    show stars_purple_anim
+    "Purple stars pulse with magical energy using video animation."
+    hide stars_purple_anim
     
-    "Testing red sparkles effect:"
-    show screen sparkle_red
-    "Red sparkles add fiery energy."
-    hide screen sparkle_red
+    "Testing pink stars effect (Video):"
+    show stars_pink_anim
+    "Pink stars sparkle with romance using video animation."
+    hide stars_pink_anim
     
-    "Testing green sparkles effect:"
-    show screen sparkle_green
-    "Green sparkles bring life to the scene."
-    hide screen sparkle_green
+    # Sparkle Effects (Video - All Colors)
+    "Testing blue sparkles effect (Video):"
+    show sparkle_blue_anim
+    "Blue sparkles dance around the scene using video animation."
+    hide sparkle_blue_anim
     
-    "Testing yellow sparkles effect:"
-    show screen sparkle_yellow
-    "Yellow sparkles shine like gold."
-    hide screen sparkle_yellow
+    "Testing red sparkles effect (Video):"
+    show sparkle_red_anim
+    "Red sparkles add fiery energy using video animation."
+    hide sparkle_red_anim
     
-    "Testing purple sparkles effect:"
-    show screen sparkle_purple
-    "Purple sparkles weave magical patterns."
-    hide screen sparkle_purple
+    "Testing green sparkles effect (Video):"
+    show sparkle_green_anim
+    "Green sparkles bring life to the scene using video animation."
+    hide sparkle_green_anim
     
-    "Testing pink sparkles effect:"
-    show screen sparkle_pink
-    "Pink sparkles create a romantic atmosphere."
-    hide screen sparkle_pink
+    "Testing yellow sparkles effect (Video):"
+    show sparkle_yellow_anim
+    "Yellow sparkles shine like gold using video animation."
+    hide sparkle_yellow_anim
     
-    # Portal Effects (All Colors)
-    "Testing blue portal effect:"
-    show screen portal_blue
-    "A blue portal opens to another dimension."
-    hide screen portal_blue
+    "Testing purple sparkles effect (Video):"
+    show sparkle_purple_anim
+    "Purple sparkles weave magical patterns using video animation."
+    hide sparkle_purple_anim
     
-    "Testing red portal effect:"
-    show screen portal_red
-    "A red portal pulses with dark energy."
-    hide screen portal_red
+    "Testing pink sparkles effect (Video):"
+    show sparkle_pink_anim
+    "Pink sparkles create a romantic atmosphere using video animation."
+    hide sparkle_pink_anim
     
-    "Testing green portal effect:"
-    show screen portal_green
-    "A green portal leads to nature's realm."
-    hide screen portal_green
+    # Portal Effects (Video - All Colors)
+    "Testing blue portal effect (Video):"
+    show portal_blue_anim
+    "A blue portal opens to another dimension using video animation."
+    hide portal_blue_anim
     
-    "Testing yellow portal effect:"
-    show screen portal_yellow
-    "A yellow portal radiates with light."
-    hide screen portal_yellow
+    "Testing red portal effect (Video):"
+    show portal_red_anim
+    "A red portal pulses with dark energy using video animation."
+    hide portal_red_anim
     
-    "Testing purple portal effect:"
-    show screen portal_purple
-    "A purple portal crackles with magic."
-    hide screen portal_purple
+    "Testing green portal effect (Video):"
+    show portal_green_anim
+    "A green portal leads to nature's realm using video animation."
+    hide portal_green_anim
     
-    "Testing pink portal effect:"
-    show screen portal_pink
-    "A pink portal glows with love's power."
-    hide screen portal_pink
+    "Testing yellow portal effect (Video):"
+    show portal_yellow_anim
+    "A yellow portal radiates with light using video animation."
+    hide portal_yellow_anim
     
-    # Plasma Effects (All Colors)
-    "Testing blue plasma effect:"
-    show screen plasma_blue
-    "Blue plasma flows with electric energy."
-    hide screen plasma_blue
+    "Testing purple portal effect (Video):"
+    show portal_purple_anim
+    "A purple portal crackles with magic using video animation."
+    hide portal_purple_anim
     
-    "Testing red plasma effect:"
-    show screen plasma_red
-    "Red plasma burns with intense heat."
-    hide screen plasma_red
+    "Testing pink portal effect (Video):"
+    show portal_pink_anim
+    "A pink portal glows with love's power using video animation."
+    hide portal_pink_anim
     
-    "Testing green plasma effect:"
-    show screen plasma_green
-    "Green plasma swirls with organic energy."
-    hide screen plasma_green
+    # Plasma Effects (Video - All Colors)
+    "Testing blue plasma effect (Video):"
+    show plasma_blue_anim
+    "Blue plasma flows with electric energy using video animation."
+    hide plasma_blue_anim
     
-    "Testing yellow plasma effect:"
-    show screen plasma_yellow
-    "Yellow plasma crackles with lightning."
-    hide screen plasma_yellow
+    "Testing red plasma effect (Video):"
+    show plasma_red_anim
+    "Red plasma burns with intense heat using video animation."
+    hide plasma_red_anim
     
-    "Testing purple plasma effect:"
-    show screen plasma_purple
-    "Purple plasma pulses with dark magic."
-    hide screen plasma_purple
+    "Testing green plasma effect (Video):"
+    show plasma_green_anim
+    "Green plasma swirls with organic energy using video animation."
+    hide plasma_green_anim
     
-    "Testing white plasma effect:"
-    show screen plasma_white
-    "White plasma glows with pure energy."
-    hide screen plasma_white
+    "Testing yellow plasma effect (Video):"
+    show plasma_yellow_anim
+    "Yellow plasma crackles with lightning using video animation."
+    hide plasma_yellow_anim
     
-    # Confetti Effects
-    "Testing warm confetti effect:"
-    show screen confetti_warm
-    "Warm colored confetti celebrates the moment."
-    hide screen confetti_warm
+    "Testing purple plasma effect (Video):"
+    show plasma_purple_anim
+    "Purple plasma pulses with dark magic using video animation."
+    hide plasma_purple_anim
     
-    "Testing cool confetti effect:"
-    show screen confetti_cool
-    "Cool colored confetti creates a festive mood."
-    hide screen confetti_cool
+    "Testing white plasma effect (Video):"
+    show plasma_white_anim
+    "White plasma glows with pure energy using video animation."
+    hide plasma_white_anim
     
-    "Testing colorful confetti effect:"
-    show screen confetti_colorful
-    "Colorful confetti fills the air with joy."
-    hide screen confetti_colorful
+    # Confetti Effects (Video)
+    "Testing warm confetti effect (Video):"
+    show confetti_warm_anim
+    "Warm colored confetti celebrates the moment using video animation."
+    hide confetti_warm_anim
     
-    # Special Effects
-    "Testing matrix effect:"
-    show screen matrix
-    "Digital rain falls in matrix style."
-    hide screen matrix
+    "Testing cool confetti effect (Video):"
+    show confetti_cool_anim
+    "Cool colored confetti creates a festive mood using video animation."
+    hide confetti_cool_anim
     
-    "Testing night sky effect:"
-    show screen night_sky
-    "A beautiful night sky appears above."
-    hide screen night_sky
+    "Testing colorful confetti effect (Video):"
+    show confetti_colorful_anim
+    "Colorful confetti fills the air with joy using video animation."
+    hide confetti_colorful_anim
     
-    "Testing shooting star effect:"
-    show screen shooting_star
-    "A shooting star streaks across the sky."
-    hide screen shooting_star
+    # Special Effects (Video)
+    "Testing matrix effect (Video):"
+    show matrix_anim
+    "Digital rain falls in matrix style using video animation."
+    hide matrix_anim
     
-    # PNG Light Effects
-    "Testing light cast1 effect:"
-    show screen light_cast1
-    "Light magic begins to form."
-    hide screen light_cast1
+    "Testing night sky effect (Video):"
+    show nightsky_anim
+    "A beautiful night sky appears above using video animation."
+    hide nightsky_anim
     
-    "Testing light cast2 effect:"
-    show screen light_cast2
-    "Advanced light magic takes shape."
-    hide screen light_cast2
-    
-    "Testing light glare effect:"
-    show screen light_glare
-    "Intense light glare blinds the scene."
-    hide screen light_glare
-    
-    "Testing light ray effect:"
-    show screen light_ray
-    "Pure light rays pierce through darkness."
-    hide screen light_ray
-    
-    "Testing light sparkle effect:"
-    show screen light_sparkle
-    "Light sparkles dance with divine energy."
-    hide screen light_sparkle
-    
-    "Testing light scintillation effect:"
-    show screen light_scintillation
-    "Light scintillates with magical power."
-    hide screen light_scintillation
-    
-    "Testing light gleam effect:"
-    show screen light_gleam
-    "Light gleams with healing energy."
-    hide screen light_gleam
-    
-    "Testing light twinkle effect:"
-    show screen light_twinkle
-    "Light twinkles like distant stars."
-    hide screen light_twinkle
-    
-    "Testing light photon effect:"
-    show screen light_photon
-    "Photon light fills the entire scene."
-    hide screen light_photon
-    
-    "Testing light radiance effect:"
-    show screen light_radiance
-    "Divine radiance illuminates everything."
-    hide screen light_radiance
-    
-    # PNG Wind Effects
-    "Testing wind cast effect:"
-    show screen wind_cast
-    "Wind magic begins to gather."
-    hide screen wind_cast
-    
-    "Testing wind cast2 effect:"
-    show screen wind_cast2
-    "Advanced wind magic takes form."
-    hide screen wind_cast2
-    
-    "Testing wind whirlwind effect:"
-    show screen wind_whirlwind
-    "A small whirlwind spins rapidly."
-    hide screen wind_whirlwind
-    
-    "Testing wind breeze effect:"
-    show screen wind_breeze
-    "A gentle breeze rustles through."
-    hide screen wind_breeze
-    
-    "Testing wind twister effect:"
-    show screen wind_twister
-    "A wind twister twists through the air."
-    hide screen wind_twister
-    
-    "Testing wind gust effect:"
-    show screen wind_gust
-    "A powerful wind gust blows through."
-    hide screen wind_gust
-    
-    "Testing wind vacuum effect:"
-    show screen wind_vacuum
-    "Wind creates a vacuum effect."
-    hide screen wind_vacuum
-    
-    "Testing wind cyclone effect:"
-    show screen wind_cyclone
-    "A wind cyclone spins with force."
-    hide screen wind_cyclone
-    
-    "Testing wind updraft effect:"
-    show screen wind_updraft
-    "Wind creates an upward draft."
-    hide screen wind_updraft
-    
-    "Testing wind tornado effect:"
-    show screen wind_tornado
-    "A massive tornado dominates the scene."
-    hide screen wind_tornado
+    "Testing shooting star effect (Video):"
+    show shootingstar_anim
+    "A shooting star streaks across the sky using video animation."
+    hide shootingstar_anim
     
     # Composite Effects
-    "Testing magical atmosphere effect:"
+    "Testing magical atmosphere effect (combined):"
     show screen magical_atmosphere
     "Multiple magical effects create an enchanting atmosphere."
     hide screen magical_atmosphere
     
-    "Testing storm weather effect:"
+    "Testing storm weather effect (combined):"
     show screen storm_weather
     "Rain and fog combine for a stormy scene."
     hide screen storm_weather
     
-    "Testing celebration effect:"
+    "Testing celebration effect (combined):"
     show screen celebration
     "Confetti and sparkles create a festive celebration."
     hide screen celebration
-    
-    "Testing light magical attack effect:"
-    show screen light_magical_attack
-    "Light magic combines for a powerful attack."
-    hide screen light_magical_attack
-    
-    "Testing light healing effect:"
-    show screen light_healing
-    "Gentle light effects create a healing atmosphere."
-    hide screen light_healing
-    
-    "Testing wind storm effect:"
-    show screen wind_storm
-    "Multiple wind effects create a powerful storm."
-    hide screen wind_storm
-    
-    "Testing wind gentle breeze effect:"
-    show screen wind_gentle_breeze
-    "Gentle wind effects create a peaceful breeze."
-    hide screen wind_gentle_breeze
     
     "Individual effects test complete! All effects have been demonstrated with the testing.jpg background."
     
     return
 
-label effects_demo:
-    scene bg meadow
+# Helper Functions Test
+label helper_functions_test:
+    scene bg testing
     
-    "Let's demonstrate the complete effects system!"
+    "Helper Functions Test - Testing the new helper functions"
     
-    # WebM Effects Demo with proper overlay testing
-    "First, let's show some WebM effects with proper transparency."
+    # Weather effect helpers
+    "Testing weather effect helpers:"
+    $ show_weather_effect("rain_light", 0, 0)
+    "Light rain using helper function."
+    $ hide_weather_effect("rain_light")
     
-    "Testing rain effect with screen blend mode:"
-    show screen rain_light
-    "It starts to rain lightly. The black background should be transparent."
-    hide screen rain_light
+    $ show_weather_effect("snow_heavy", 0, 0, 0)
+    "Heavy snow using helper function."
+    $ hide_weather_effect("snow_heavy")
     
-    "Testing sparkle effect:"
-    show screen sparkle_blue
-    "Blue sparkles appear in the top-left area."
-    hide screen sparkle_blue
+    # Atmospheric effect helpers
+    "Testing atmospheric effect helpers:"
+    show fog_anim
+    "Fog using video image."
+    hide fog_anim
     
-    "Testing stars effect:"
-    show screen stars_purple
-    "Purple stars twinkle in the center area."
-    hide screen stars_purple
+    $ show_atmospheric_effect("fireflies", 0, 0, -100)
+    "Fireflies using helper function."
+    $ hide_atmospheric_effect("fireflies")
     
-
+    # Magical effect helpers
+    "Testing magical effect helpers:"
+    show stars_blue_anim
+    "Blue stars using video image."
+    hide stars_blue_anim
     
-    # PNG Effects Demo
-    "Now let's show some PNG sprite sheet effects."
+    $ show_magical_effect("sparkle", "purple", 0, 0, -100)
+    "Purple sparkles using helper function."
+    $ hide_magical_effect("sparkle", "purple")
     
-    show screen light_sparkle
-    "Light magic sparkles around us."
-    hide screen light_sparkle
+    show portal_green_anim
+    "Green portal using video image."
+    hide portal_green_anim
     
-    show screen wind_tornado
-    "A powerful tornado appears!"
-    hide screen wind_tornado
+    $ show_magical_effect("plasma", "red", 0, 0, 0)
+    "Red plasma using helper function."
+    $ hide_magical_effect("plasma", "red")
     
-    # Helper Functions Demo
-    "Let's use the helper functions for easier management."
+    # Special effect helpers
+    "Testing special effect helpers:"
+    show matrix_anim
+    "Matrix effect using video image."
+    hide matrix_anim
     
-    $ show_light_effect("sparkle", 0, 0, 30)
-    "Using helper function for light sparkle."
-    $ hide_light_effect("sparkle")
+    $ show_special_effect("confetti_colorful", 0, 0, -50)
+    "Colorful confetti using helper function."
+    $ hide_special_effect("confetti_colorful")
     
-    $ show_wind_effect("tornado", 0, 0, 60)
-    "Using helper function for wind tornado."
-    $ hide_wind_effect("tornado")
+    # Composite effect helpers
+    "Testing composite effect helpers:"
+    $ show_composite_effect("magical_atmosphere", 0, 0)
+    "Magical atmosphere using helper function."
+    $ hide_composite_effect("magical_atmosphere")
     
-    $ show_magical_effect("stars", "purple", 0, 0)
-    "Using helper function for purple stars."
-    $ hide_magical_effect("stars", "purple")
+    $ show_composite_effect("celebration", 0, 0)
+    "Celebration using helper function."
+    $ hide_composite_effect("celebration")
     
-    # Composite Effects Demo
-    "Let's see some combined effects."
-    
-    show screen light_magical_attack(0, 0, 30)
-    "A combined light magical attack!"
-    hide screen light_magical_attack
-    
-    show screen magical_atmosphere(0, 0)
-    "A magical atmosphere fills the area."
-    hide screen magical_atmosphere
-    
-    # Multiple Effects Demo
-    "Let's combine multiple effects."
-    
-    $ show_light_effect("sparkle", 100, 100, 30)
-    $ show_wind_effect("breeze", 300, 400, 30)
-    $ show_magical_effect("stars", "blue", 200, 200)
-    
-    "Multiple effects create a magical atmosphere."
-    
+    # Utility function
+    "Testing utility function:"
+    $ show_weather_effect("rain_light", 0, 0)
+    show fog_anim
+    show stars_blue_anim
+    "Multiple effects are showing..."
     $ hide_all_effects()
-    "All effects are cleared."
+    hide fog_anim
+    hide stars_blue_anim
+    "All effects cleared using hide_all_effects()."
     
-    return
-
-# WebM Effects Overlay Test
-label webm_overlay_test:
-    scene bg room
-    
-    "Testing WebM effects overlay capabilities..."
-    
-    "Single effect test:"
-    show screen sparkle_blue(0, 0)
-    "Blue sparkles should appear with transparent background."
-    hide screen sparkle_blue
-    
-    "Multiple effects overlay test:"
-    show screen rain_light(0, 0)
-    show screen sparkle_yellow(200, 100)
-    show screen stars_purple(400, 200)
-    show screen fireflies(100, 300)
-    
-    "Multiple WebM effects should overlay properly without black backgrounds."
-    "Each effect should blend with the others and the background."
-    
-    hide screen rain_light
-    hide screen sparkle_yellow
-    hide screen stars_purple
-    hide screen fireflies
-    
-    "Effects cleared. The overlay test is complete."
-    
-    return
-
-# WebM Blend Mode Comparison Test
-label webm_blend_test:
-    scene bg meadow
-    
-    "Testing different WebM effect blend modes..."
-    
-    "Testing additive blending (should remove black background):"
-    show screen sparkle_blue(100, 100)
-    "Blue sparkles with additive blending - black should be transparent."
-    hide screen sparkle_blue
-    
-    "Testing additive blending for stars:"
-    show screen stars_yellow(200, 200)
-    "Yellow stars with additive blending - should be bright and glowing."
-    hide screen stars_yellow
-    
-    "Testing additive blending for fireflies:"
-    show screen fireflies(300, 100)
-    "Fireflies with additive blending - should blend naturally with background."
-    hide screen fireflies
-    
-    "Testing multiple effects with different blend modes:"
-    show screen rain_light(0, 0)
-    show screen sparkle_purple(400, 100)
-    show screen stars_blue(200, 300)
-    
-    "Multiple effects should all have transparent backgrounds and blend together."
-    
-    hide screen rain_light
-    hide screen sparkle_purple
-    hide screen stars_blue
-    
-    "Blend mode test complete."
-    
-    "Testing alternative blend approach:"
-    show screen stars_blue_alt(100, 100)
-    "Alternative blue stars - should also have transparent background."
-    hide screen stars_blue_alt
-    
-    show screen sparkle_blue_alt(200, 200)
-    "Alternative blue sparkles - testing different blend method."
-    hide screen sparkle_blue_alt
-    
-    return
-
-# WebM Performance and Quality Test
-label webm_quality_test:
-    scene bg battlefield
-    
-    "Testing WebM effect quality and performance..."
-    
-    "Testing high-quality effects:"
-    show screen plasma_blue(0, 0)
-    "Blue plasma effect - should be smooth and high quality."
-    hide screen plasma_blue
-    
-    show screen portal_purple(200, 0)
-    "Purple portal effect - should have smooth animation."
-    hide screen portal_purple
-    
-    "Testing weather effects:"
-    show screen snow_heavy(0, 0)
-    "Heavy snow - should cover the entire screen properly."
-    hide screen snow_heavy
-    
-    show screen fog(0, 0)
-    "Fog effect - should create atmospheric overlay."
-    hide screen fog
-    
-    "Testing special effects:"
-    show screen matrix(0, 0)
-    "Matrix effect - should have the digital rain effect."
-    hide screen matrix
-    
-    show screen night_sky(0, 0)
-    show screen shooting_star(0, 0)
-    "Night sky with shooting star - layered effects."
-    hide screen night_sky
-    hide screen shooting_star
-    
-    "Quality test complete."
-    
-    return
-
-# Magic Battle Scene Example
-label magic_battle_scene:
-    scene bg battlefield
-    
-    "A magical battle begins!"
-    
-    # WebM effects for atmosphere
-    $ show_atmospheric_effect("fog")
-    "Fog rolls in as the battle begins."
-    
-    # PNG effects for magic
-    $ show_light_effect("cast1", 0, 0, 30)
-    "The light mage begins casting."
-    $ hide_light_effect("cast1")
-    
-    $ show_light_composite("magical_attack", 0, 0, 30)
-    "A powerful light spell is unleashed!"
-    $ hide_light_composite("magical_attack")
-    
-    # Wind magic counter
-    $ show_wind_effect("cast", 0, 0, 30)
-    "The wind mage counters with wind magic."
-    $ hide_wind_effect("cast")
-    
-    $ show_wind_composite("storm", 0, 0, 30)
-    "A wind storm counters the attack!"
-    $ hide_wind_composite("storm")
-    
-    # Ultimate spells
-    $ show_light_effect("radiance", 0, 0, 60)
-    "The final light spell fills the battlefield."
-    $ hide_light_effect("radiance")
-    
-    $ show_wind_effect("tornado", 0, 0, 60)
-    "A massive tornado appears!"
-    $ hide_wind_effect("tornado")
-    
-    $ hide_all_effects()
-    "The battle reaches its climax!"
-    
-    return
-
-# Healing Scene Example
-label healing_scene:
-    scene bg temple
-    
-    "In the sacred temple..."
-    
-    # Gentle healing sequence
-    $ show_light_composite("healing", 0, 0, 30)
-    "Divine light begins to heal the wounded."
-    $ hide_light_composite("healing")
-    
-    $ show_wind_composite("gentle_breeze", 0, 0, 30)
-    "A gentle breeze carries the healing magic."
-    $ hide_wind_composite("gentle_breeze")
-    
-    $ show_light_effect("gleam", 0, 0, 30)
-    "The healing light gleams with divine power."
-    $ hide_light_effect("gleam")
-    
-    $ show_light_effect("twinkle", 0, 0, 30)
-    "Magical twinkles dance in the air."
-    $ hide_light_effect("twinkle")
-    
-    "The healing is complete."
+    "Helper functions test complete!"
     
     return
 
 # Performance Test
 label effects_performance_test:
-    scene bg room
+    scene bg testing
     
-    "Testing effects performance..."
+    "Performance Test - Testing multiple effects simultaneously"
     
-    # Test multiple effects simultaneously
-    $ show_light_effect("sparkle", 0, 0, 30)
-    $ show_wind_effect("breeze", 200, 0, 30)
-    $ show_magical_effect("stars", "blue", 400, 0, 30)
-    $ show_atmospheric_effect("fog")
-    $ show_magical_effect("sparkle", "yellow", 0, 200, 30)
+    # Test multiple video effects
+    "Testing multiple video effects:"
+    show fog_anim
+    show sparkle_blue_anim
+    show stars_purple_anim
+    show plasma_red_anim
+    "Multiple video effects running simultaneously."
+    hide fog_anim
+    hide sparkle_blue_anim
+    hide stars_purple_anim
+    hide plasma_red_anim
     
-    "Multiple effects are running simultaneously."
+    # Test multiple SnowBlossom effects
+    "Testing multiple SnowBlossom effects:"
+    show screen rain_light
+    show screen fireflies
+    show screen dust
+    "Multiple SnowBlossom effects running simultaneously."
+    hide screen rain_light
+    hide screen fireflies
+    hide screen dust
+    
+    # Test mixed effects
+    "Testing mixed video and SnowBlossom effects:"
+    show fog_anim
+    show screen rain_heavy
+    show sparkle_yellow_anim
+    show screen fireflies
+    show matrix_anim
+    "Mixed effects running simultaneously."
+    hide fog_anim
+    hide screen rain_heavy
+    hide sparkle_yellow_anim
+    hide screen fireflies
+    hide matrix_anim
+    
+    # Test composite effects
+    "Testing composite effects:"
+    show screen magical_atmosphere
+    "Composite effect running."
+    hide screen magical_atmosphere
+    
+    show screen storm_weather
+    "Storm weather composite effect running."
+    hide screen storm_weather
+    
+    "Performance test complete!"
+    
+    return
+
+# Scene Examples
+label magical_battle_scene:
+    scene bg testing
+    
+    "Magical Battle Scene Example"
+    
+    "The battle begins!"
+    
+    # Atmospheric setup
+    show fog_anim
+    "Fog rolls in as the battle begins."
+    
+    # Magical attacks
+    show sparkle_blue_anim
+    "Blue magical sparkles fly through the air!"
+    hide sparkle_blue_anim
+    
+    show stars_purple_anim
+    "Purple stars of power appear!"
+    hide stars_purple_anim
+    
+    show portal_red_anim
+    "A red portal opens, unleashing dark energy!"
+    hide portal_red_anim
+    
+    # Weather effects
+    $ show_weather_effect("rain_heavy", 0, 0)
+    "Heavy rain falls as the battle intensifies!"
+    $ hide_weather_effect("rain_heavy")
+    
+    # Final attack
+    show plasma_white_anim
+    "Pure white plasma energy fills the battlefield!"
+    hide plasma_white_anim
+    
+    hide fog_anim
+    "The battle reaches its climax!"
+    
+    return
+
+label peaceful_scene:
+    scene bg testing
+    
+    "Peaceful Scene Example"
+    
+    "A peaceful moment..."
+    
+    # Gentle effects
+    $ show_atmospheric_effect("fireflies", 0, 0, -100)
+    "Gentle fireflies light up the night."
+    
+    show stars_blue_anim
+    "Blue stars twinkle peacefully above."
+    hide stars_blue_anim
+    
+    $ show_atmospheric_effect("petals", 0, 0, -100)
+    "Cherry petals fall gently in the breeze."
+    
+    "The peaceful atmosphere is complete."
     
     $ hide_all_effects()
-    "Performance test complete."
+    "The moment passes."
+    
+    return
+
+label celebration_scene:
+    scene bg testing
+    
+    "Celebration Scene Example"
+    
+    "A celebration begins!"
+    
+    # Celebration effects
+    $ show_composite_effect("celebration", 0, 0)
+    "Confetti and sparkles fill the air!"
+    
+    show confetti_colorful_anim
+    "More colorful confetti joins the celebration!"
+    hide confetti_colorful_anim
+    
+    show sparkle_yellow_anim
+    "Golden sparkles add to the festive mood!"
+    hide sparkle_yellow_anim
+    
+    "The celebration is in full swing!"
+    
+    $ hide_all_effects()
+    "The celebration winds down."
     
     return 

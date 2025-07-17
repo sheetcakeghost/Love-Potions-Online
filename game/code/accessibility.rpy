@@ -10,6 +10,7 @@ default persistent.pref_text_scale = "regular"
 default persistent.say_dialogue_kerning = 0
 default persistent.pref_text_font = "DejaVuSans.ttf"
 default persistent.pref_text_size = 32
+default persistent.pref_text_weight = 400
 default persistent.pref_text_color = "#333333"
 default persistent.pref_text_spacing = 0
 
@@ -90,4 +91,10 @@ init python:
             renpy.with_statement(fade)
 
 ### Visual Text Character
-define vt = Character(None, condition="persistent.visual_text_help or _preferences.self_voicing", what_italic=True) 
+define vt = Character(None, condition="persistent.visual_text_help or _preferences.self_voicing", what_italic=True, 
+    what_font=persistent.pref_text_font, 
+    what_size=persistent.pref_text_size, 
+    what_color=persistent.pref_text_color, 
+    what_line_spacing=persistent.pref_text_spacing, 
+    what_kerning=persistent.say_dialogue_kerning, 
+    what_font_variables={"wght": persistent.pref_text_weight}) 

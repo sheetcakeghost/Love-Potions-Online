@@ -176,13 +176,23 @@ screen accessibility():
                 label _("Text Customization")
                 
                 hbox:
-                    textbutton _("OpenDyslexic"):
-                        action changeFont("OpenDyslexic.otf")
-                        selected persistent.pref_text_font == "OpenDyslexic.otf"
-                    textbutton _("DejaVu Sans"):
-                        action changeFont("DejaVuSans.ttf")
-                        selected persistent.pref_text_font == "DejaVuSans.ttf"
-                
+                    textbutton _("Hyperlegible"):
+                        action changeFont("Atkinson_Hyperlegible_Next/AtkinsonHyperlegibleNext-VariableFont_wght.ttf")
+                        selected persistent.pref_text_font == "Atkinson_Hyperlegible_Next/AtkinsonHyperlegibleNext-VariableFont_wght.ttf"
+                    textbutton _("Hyperlegible Mono"):
+                        action changeFont("Atkinson_Hyperlegible_Mono/AtkinsonHyperlegibleMono-VariableFont_wght.ttf")
+                        selected persistent.pref_text_font == "Atkinson_Hyperlegible_Mono/AtkinsonHyperlegibleMono-VariableFont_wght.ttf"
+
+                vbox:
+                    style_prefix "slider"
+                    label _("Text Size")
+                    bar value FieldValue(persistent, "pref_text_size", range=24, offset=16)
+
+                vbox:
+                    style_prefix "slider"
+                    label _("Font Weight")
+                    bar value FieldValue(persistent, "pref_text_weight", range=700, offset=100)
+
                 hbox:
                     textbutton _("Regular Size"):
                         action changeScale("regular")
@@ -190,7 +200,7 @@ screen accessibility():
                     textbutton _("Large Size"):
                         action changeScale("large")
                         selected persistent.pref_text_scale == "large"
-                
+
                 vbox:
                     style_prefix "slider"
                     label _("Text Spacing")
@@ -202,29 +212,24 @@ screen accessibility():
                 label _("Text Color")
                 
                 hbox:
-                    textbutton _("Dark Gray"):
-                        action changeColor("#333333")
-                        selected persistent.pref_text_color == "#333333"
-                    textbutton _("Black"):
-                        action changeColor("#000000")
-                        selected persistent.pref_text_color == "#000000"
-                    textbutton _("Dark Blue"):
-                        action changeColor("#1a1a2e")
-                        selected persistent.pref_text_color == "#1a1a2e"
-                    textbutton _("Dark Green"):
-                        action changeColor("#1a2e1a")
-                        selected persistent.pref_text_color == "#1a2e1a"
+                    textbutton _("Warm"):
+                        action changeColor("#f7f2e8")
+                        selected persistent.pref_text_color == "#f7f2e8"
+                    textbutton _("Bright"):
+                        action changeColor("#e0e8f0")
+                        selected persistent.pref_text_color == "#e0e8f0"
+                    textbutton _("Soft"):
+                        action changeColor("#bdd2c8")
+                        selected persistent.pref_text_color == "#bdd2c8"
             
             # Live Preview
             vbox:
                 style_prefix "accessibility"
                 label _("Live Preview")
-                
-                frame:
+                window:
                     background Frame("gui/textbox.png", 40, 10, 40, 40, tile=False)
                     xysize (800, 200)
                     padding (40, 20, 40, 40)
-                    
                     text _("This is how your dialogue text will appear with the current settings. You can see the font, size, color, and spacing changes in real time as you adjust the options above."):
                         font persistent.pref_text_font
                         size persistent.pref_text_size
@@ -234,6 +239,10 @@ screen accessibility():
                         xalign 0.5
                         yalign 0.5
                         text_align 0.5
+                text _("Note: Font weight will apply to dialogue, but cannot be previewed here due to Ren'Py limitations."):
+                    size 20
+                    color "#888"
+                    xalign 0.5
 
 
     if GetFocusRect("display_drop"):

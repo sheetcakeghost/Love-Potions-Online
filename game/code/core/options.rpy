@@ -226,3 +226,12 @@ init python:
 ## by a slash.
 
 # define build.itch_project = "renpytom/test-project"
+
+
+init python:
+    # Remove 'sfx' if it already exists, then insert it after 'master' and before 'screens'
+    if 'sfx' in config.layers:
+        config.layers.remove('sfx')
+    if 'master' in config.layers:
+        idx = config.layers.index('master') + 1
+        config.layers.insert(idx, 'sfx')

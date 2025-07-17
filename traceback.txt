@@ -1,0 +1,88 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/code/screens/preferences.rpy", line 10, in execute
+    screen preferences():
+  File "game/code/screens/preferences.rpy", line 10, in execute
+    screen preferences():
+  File "game/code/screens/preferences.rpy", line 47, in execute
+    if pref_page == "options":
+  File "game/code/screens/preferences.rpy", line 52, in execute
+    use accessibility
+  File "game/code/screens/preferences.rpy", line 143, in execute
+    screen accessibility():
+  File "game/code/screens/preferences.rpy", line 143, in execute
+    screen accessibility():
+  File "game/code/screens/preferences.rpy", line 144, in execute
+    viewport:
+  File "game/code/screens/preferences.rpy", line 149, in execute
+    vbox:
+  File "game/code/screens/preferences.rpy", line 226, in execute
+    vbox:
+  File "game/code/screens/preferences.rpy", line 229, in execute
+    window:
+  File "game/code/screens/preferences.rpy", line 233, in execute
+    add vt(_("This is how your dialogue text will appear with the current settings. You can see the font, size, color, and spacing changes in real time as you adjust the options above."))
+AttributeError: 'bool' object has no attribute '_duplicatable'
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "renpy/common/_layout/screen_load_save.rpym", line 35, in script
+    $ ui.interact()
+  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/_layout/screen_load_save.rpym", line 35, in <module>
+    $ ui.interact()
+  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/code/screens/preferences.rpy", line 10, in execute
+    screen preferences():
+  File "game/code/screens/preferences.rpy", line 10, in execute
+    screen preferences():
+  File "game/code/screens/preferences.rpy", line 47, in execute
+    if pref_page == "options":
+  File "game/code/screens/preferences.rpy", line 52, in execute
+    use accessibility
+  File "game/code/screens/preferences.rpy", line 143, in execute
+    screen accessibility():
+  File "game/code/screens/preferences.rpy", line 143, in execute
+    screen accessibility():
+  File "game/code/screens/preferences.rpy", line 144, in execute
+    viewport:
+  File "game/code/screens/preferences.rpy", line 149, in execute
+    vbox:
+  File "game/code/screens/preferences.rpy", line 226, in execute
+    vbox:
+  File "game/code/screens/preferences.rpy", line 229, in execute
+    window:
+  File "game/code/screens/preferences.rpy", line 233, in execute
+    add vt(_("This is how your dialogue text will appear with the current settings. You can see the font, size, color, and spacing changes in real time as you adjust the options above."))
+  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\sl2\sldisplayables.py", line 455, in sl2add
+    if d._duplicatable:
+AttributeError: 'bool' object has no attribute '_duplicatable'
+
+Windows-10-10.0.26100 AMD64
+Ren'Py 8.3.7.25031702
+Love Potions Online 0.1
+Thu Jul 17 11:00:14 2025
