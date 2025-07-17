@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/code/screens/dialogue_screens.rpy", line 345: Line is indented, but the preceding style statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    idle_color '#3b3738'
-    ^
+File "game/code/effects/vfx.rpy", line 475: 'blend_mode' is not a keyword argument or valid child of the add statement.
+    add "fog_mov" xpos 0 ypos 0 blend_mode "screen"
+                                          ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu Jul 17 13:31:44 2025
+Thu Jul 17 18:41:38 2025

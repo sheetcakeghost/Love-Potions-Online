@@ -180,11 +180,11 @@ screen accessibility():
                 
                 hbox:
                     textbutton _("Hyperlegible"):
-                        action changeFont("gui/font/Atkinson_Hyperlegible_Next/AtkinsonHyperlegibleNext-VariableFont_wght.ttf")
-                        selected persistent.pref_text_font == "gui/font/Atkinson_Hyperlegible_Next/AtkinsonHyperlegibleNext-VariableFont_wght.ttf"
+                        action changeFont("gui/font/AtkinsonHyperlegibleNext-VariableFont_wght.ttf")
+                        selected persistent.pref_text_font == "gui/font/AtkinsonHyperlegibleNext-VariableFont_wght.ttf"
                     textbutton _("Hyperlegible Mono"):
-                        action changeFont("gui/font/Atkinson_Hyperlegible_Mono/AtkinsonHyperlegibleMono-VariableFont_wght.ttf")
-                        selected persistent.pref_text_font == "gui/font/Atkinson_Hyperlegible_Mono/AtkinsonHyperlegibleMono-VariableFont_wght.ttf"
+                        action changeFont("gui/font/AtkinsonHyperlegibleMono-VariableFont_wght.ttf")
+                        selected persistent.pref_text_font == "gui/font/AtkinsonHyperlegibleMono-VariableFont_wght.ttf"
 
                 vbox:
                     style_prefix "slider"

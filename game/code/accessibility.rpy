@@ -8,36 +8,36 @@ default persistent.screenshake = True
 default persistent.say_window_alpha = 0.75
 default persistent.pref_text_scale = "regular"
 default persistent.say_dialogue_kerning = 0
-default persistent.pref_text_font = "DejaVuSans.ttf"
-default persistent.pref_text_size = 32
+default persistent.pref_text_font = "gui/font/AtkinsonHyperlegibleNext-VariableFont_wght.ttf"
+default persistent.pref_text_size = 30
 default persistent.pref_text_weight = 400
-default persistent.pref_text_color = "#333333"
+default persistent.pref_text_color = "#f7f2e8"
 default persistent.pref_text_spacing = 0
 
 init python:
     ### Size Dictionary for Font Scaling
     size_dict = {
-        "gui/font/Atkinson_Hyperlegible_Next/AtkinsonHyperlegibleNext-VariableFont_wght.ttf": {
-            "regular": 32,
+        "gui/font/AtkinsonHyperlegibleNext-VariableFont_wght.ttf": {
+            "regular": 30,
             "large": 36,
             "line_spacing": 0,
         },
-        "gui/font/Atkinson_Hyperlegible_Mono/AtkinsonHyperlegibleMono-VariableFont_wght.ttf": {
-            "regular": 32,
+        "gui/font/AtkinsonHyperlegibleMono-VariableFont_wght.ttf": {
+            "regular": 30,
             "large": 36,
             "line_spacing": 0,
         },
-        "OpenDyslexic.otf": {
+        "gui/font/Fortnight-Regular.otf": {
             "regular": 31,
             "large": 34,
             "line_spacing": -15,
         },
-        "DejaVuSans.ttf": {
+        "gui/font/DejaVuSans.ttf": {
             "regular": 32,
             "large": 35,
             "line_spacing": 0,
         },
-        "FranxurterTotallyMedium-gxwjp.ttf": {
+        "gui/font/Levorotary_Medium.ttf": {
             "regular": 33,
             "large": 36,
             "line_spacing": 0,

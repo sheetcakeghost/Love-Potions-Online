@@ -60,8 +60,8 @@ screen game_menu(title):
     textbutton _("Return"):
         style "return_button"
         text_idle_color u"#fcd3e1" text_hover_color u"#ffffff"
-        text_align(0.5, 0.5) text_xoffset -30
-        text_font "gui/font/MotleyForcesRegular.ttf" text_size 45
+        text_align(0.5, 0.5) text_xoffset -40 text_yoffset 5
+        text_font "gui/font/Levorotary_Medium.ttf" text_size 65
 
         at return_slide
         action Return()

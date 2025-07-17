@@ -18,30 +18,34 @@ screen say(who, what):
 
     window:
         id "window"
-        background Transform("gui/textbox.png", alpha=persistent.say_window_alpha, xalign=0.5, yalign=1.0)
+        background Frame("gui/textbox.png", 45, 46, tile=True)
         xalign 0.5
         yalign 1.0
-        yoffset -25
-        xysize (1131, 277)
-        padding (40, 10, 40, 40)
+        xsize 1800
+        yminimum 320
+        padding (80, 44, 80, 43)
 
-        if who is not None:
-            window:
-                id "namebox"
-                style "namebox"
-                text who id "who"
+        vbox:
+            spacing 0
+            if who is not None:
+                fixed:
+                    xfill True
+                    yfit True
+                    window:
+                        id "namebox"
+                        style "namebox"
+                        xalign 0.5
+                        text who id "who"
 
-        text what id "what":
-            font persistent.pref_text_font
-            size persistent.pref_text_size
-            color persistent.pref_text_color
-            line_spacing persistent.pref_text_spacing
-            kerning persistent.say_dialogue_kerning
-            axis {"wght": persistent.pref_text_weight}
-            xalign 0.5
-            yalign 0.5
-            text_align 0.5
-            shaper "harfbuzz"
+            text what id "what":
+                font persistent.pref_text_font
+                size persistent.pref_text_size
+                color persistent.pref_text_color
+                line_spacing persistent.pref_text_spacing
+                kerning persistent.say_dialogue_kerning
+                xalign 0.0
+                yalign 0.5
+                text_align 0.0
 
     add SideImage() xalign 0.0 yalign 1.0
 
@@ -55,7 +59,6 @@ style window:
     xalign 0.5
     yalign 1.0
     yoffset -25
-    xysize (1131, 277)
     padding (40, 10, 40, 40)
 
 # Style for the dialogue
@@ -76,8 +79,8 @@ style say_thought:
 # Style for the box containing the speaker's name
 style namebox:
     xalign 0.5 #xoffset 40
-    yoffset -30
     xysize (None, 81)
+    yoffset -70
     background Frame("gui/namebox.png", 40, 20, 40, 20, tile=False, xalign=0.5)
     padding (40, 15, 40, 15)
 
@@ -161,8 +164,9 @@ style side_button:
     background "gui/qm/btn.png"
 style side_button_text:
     align (0.5,0.5)
+    size 36
 style quick_hbox:
-    pos(1242,764)
+    pos(800, 1005)
     spacing 15
 
 style quick_button:

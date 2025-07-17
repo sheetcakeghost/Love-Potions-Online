@@ -17,7 +17,7 @@ screen main_menu():
     add "gui/main_menu/bg.png"
 
 
-    label "Your Title \nHere" 
+    label "Love Potions Online" 
 
 
     ###The black border + strip
@@ -51,18 +51,12 @@ screen main_menu():
         at wiggle
 
 
-    button:
-        xysize(128,132) pos(35, 860)
-        add "gui/main_menu/quit_bg.png"
-        add "gui/main_menu/quit_icon.png" at button_fade
-        action Quit()
-
 
 style mm_button_text:
-    font "gui/font/MotleyForcesRegular.ttf"
+    font "gui/font/Levorotary_Medium.ttf"
 
 style mm_label_text:
-    font "gui/font/MotleyForcesRegular.ttf" 
+    font "gui/font/Fortnight-Regular.otf" 
     size 180
     textalign 0.5
     outlines [ (absolute(6), "#ffffff", absolute(0), absolute(0)) ]

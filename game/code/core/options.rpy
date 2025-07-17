@@ -235,5 +235,12 @@ init python:
     if 'master' in config.layers:
         idx = config.layers.index('master') + 1
         config.layers.insert(idx, 'sfx')
+    
+    # Remove 'special_fx' if it already exists, then insert it after 'sfx' and before 'screens'
+    if 'special_fx' in config.layers:
+        config.layers.remove('special_fx')
+    if 'sfx' in config.layers:
+        idx = config.layers.index('sfx') + 1
+        config.layers.insert(idx, 'special_fx')
 
 default _open_pref_page = None

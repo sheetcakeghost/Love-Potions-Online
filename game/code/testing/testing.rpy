@@ -2,6 +2,8 @@ label testing:
     menu optional_name:
         "Effects Testing":
             jump individual_effects_test
+        "FX Testing":
+            jump fx_testing
         "General Testing":
             jump general_testing
         
@@ -103,8 +105,8 @@ label testing:
 
 
     label general_testing:
-        "This is where the introduction to the game will be. Normally we'd have The Weaver intro playing right now, but you didn't decide to test that one."
-        "So I'm just going to test the basics, okay?"
+        scene bg matrix with dissolve
+        "This is where the introduction to the game will be. Normally we'd have the intro playing right now, but you decided to test things instead."
         "I'm going to test the maximum amount of text that can fit in a box now by filling this with a lot of babble. I thought about just using the same sentence over and over again for this, but then I thought \"Nah, I bet I can string some unnecessary words together.\" Of course, this little test is more to help work out the spacing. I rarely ever put this much text on the same line."
         define testname1 = Character("Name Here")
         define testname2 = Character("The Honorable Name McHerengton the 3rd Esquire")

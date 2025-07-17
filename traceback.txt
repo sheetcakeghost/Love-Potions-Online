@@ -1,80 +1,35 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00start.rpy", line 317, in script call
-    call expression "before_main_menu"
-  File "game/code/itch.io/feniksdev/accessible_audio/accessibility/accessible_audio_frontend.rpy", line 26, in script
-    centered "You are missing audio declarations. The missing declarations have been copied to your clipboard.\nPress Ctrl+V (or Cmd+V) in your code editor to paste it into your script."
-  File "game/code/itch.io/makevisualnovels/Smart Barks for RenPy/MVNSB.rpy", line 45, in SB_say
-    return who(what, *args, **kwargs)
-Exception: Could not find font 'Atkinson_Hyperlegible_Mono/AtkinsonHyperlegibleMono-VariableFont_wght.ttf'.
+  File "game/code/core/options.rpy", line 231, in script
+    init python:
+  File "game/code/core/options.rpy", line 231, in script
+    init python:
+  File "game/code/core/options.rpy", line 239, in <module>
+    "multiply": (GL_FUNC_ADD, GL_DST_COLOR, GL_ONE_MINUS_SRC_ALPHA, GL_FUNC_ADD, GL_ZERO, GL_ONE),
+NameError: name 'GL_DST_COLOR' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00start.rpy", line 317, in script call
-    call expression "before_main_menu"
-  File "game/code/itch.io/feniksdev/accessible_audio/accessibility/accessible_audio_frontend.rpy", line 26, in script
-    centered "You are missing audio declarations. The missing declarations have been copied to your clipboard.\nPress Ctrl+V (or Cmd+V) in your code editor to paste it into your script."
-  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "game/code/itch.io/makevisualnovels/Smart Barks for RenPy/MVNSB.rpy", line 45, in SB_say
-    return who(what, *args, **kwargs)
-  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\character.py", line 1471, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\character.py", line 1117, in do_display
-    display_say(who,
-  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\character.py", line 814, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\display\core.py", line 2882, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\display\core.py", line 1384, in draw_screen
-    surftree = renpy.display.render.render_screen(
-  File "render.pyx", line 486, in renpy.display.render.render_screen
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\display\screen.py", line 755, in render
-    child = renpy.display.render.render(self.child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\display\layout.py", line 1457, in render
-    surf = render(child,
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\text\text.py", line 2627, in render
-    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
-  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\text\text.py", line 776, in __init__
-    glyphs = ts.glyphs(s, self)
-  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\text\text.py", line 348, in glyphs
-    fo = font.get_font(self.font, self.size, self.bold, self.italic, 0, self.antialias, self.vertical, self.hinting, layout.oversample, self.shaper, self.instance, self.axis)
-  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\text\font.py", line 745, in get_font
-    face = load_face(fn, shaper)
-  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\text\font.py", line 673, in load_face
-    raise Exception("Could not find font {0!r}.".format(orig_fn))
-Exception: Could not find font 'Atkinson_Hyperlegible_Mono/AtkinsonHyperlegibleMono-VariableFont_wght.ttf'.
+  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\main.py", line 541, in main
+    renpy.game.context().run(node)
+  File "game/code/core/options.rpy", line 231, in script
+    init python:
+  File "lib/python3.9/future/utils/__init__.py", line 444, in raise_
+  File "game/code/core/options.rpy", line 231, in script
+    init python:
+  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\Projects\Ren'Py\RenPy 8.3.7\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/code/core/options.rpy", line 239, in <module>
+    "multiply": (GL_FUNC_ADD, GL_DST_COLOR, GL_ONE_MINUS_SRC_ALPHA, GL_FUNC_ADD, GL_ZERO, GL_ONE),
+NameError: name 'GL_DST_COLOR' is not defined
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 Love Potions Online 0.1
-Thu Jul 17 11:56:38 2025
+Thu Jul 17 18:50:26 2025

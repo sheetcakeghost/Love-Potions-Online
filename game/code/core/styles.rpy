@@ -23,13 +23,14 @@ define config.check_conflicting_properties = True
 ## any instances where they are used directly with their value.
 
 # The text font for dialogue and choice menus
-define gui.text_font = gui.preference("font", "gui/font/FranxurterTotallyMedium-gxwjp.ttf")
+define gui.text_font = gui.preference("font", "gui/font/AtkinsonHyperlegibleNext-VariableFont_wght.ttf")
 # The text font for buttons
-define gui.interface_text_font = gui.preference("interface_font", "gui/font/FranxurterTotallyMedium-gxwjp.ttf")
+define gui.interface_text_font = gui.preference("interface_font", "gui/font/Levorotary_Medium.ttf")
 # The default size of in-game text
 define gui.text_size = gui.preference("size", 33)
+define gui.menu_text_size = 28
 # The font for character names
-define gui.name_text_font = gui.preference("name_font", "gui/font/FranxurterTotallyMedium-gxwjp.ttf")
+define gui.name_text_font = gui.preference("name_font", "gui/font/Levorotary_Medium.ttf")
 # The size for character names
 define gui.name_text_size = gui.preference("name_size", 45)
 
@@ -140,3 +141,8 @@ style vslider:
 style frame:
     padding (6, 6, 6, 6)
     background Frame("gui/frame.png", 6, 6, 6, 6, tile=False)
+
+# Add a new style for menu text that uses the new variable
+style menu_text is gui_text
+style menu_text:
+    size gui.menu_text_size

@@ -55,6 +55,16 @@ init python:
     # For advanced usage, if you do a font size slider you can make these minimum and maximum sizes!
 
     size_dict = {
+        "gui/font/AtkinsonHyperlegibleNext-VariableFont_wght.ttf": {
+            "regular": 30,
+            "large": 36,
+            "line_spacing": 0,
+        },
+        "gui/font/AtkinsonHyperlegibleMono-VariableFont_wght.ttf": {
+            "regular": 30,
+            "large": 36,
+            "line_spacing": 0,
+        },
         "gui/font/Atkinson_Hyperlegible_Next/AtkinsonHyperlegibleNext-VariableFont_wght.ttf": {
             "regular": 32,
             "large": 36,

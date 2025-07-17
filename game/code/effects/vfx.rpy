@@ -1,351 +1,11 @@
-image fog_anim = Movie(play="images/FX/webm/Fog.webm", loop=True)
+
 # Screen Effects
-# Handles PNG sequence effects and SnowBlossom particle effects
+# WebM image definitions are now in webm_images.rpy with init -2 priority
 
-# --- Video-based image definitions for effects ---
-image underwater_anim = Movie(play="images/FX/webm/Underwater.webm", loop=True)
-image godrays_anim = Movie(play="images/FX/webm/GodRay_L.webm", loop=True)
-image godrays_r_anim = Movie(play="images/FX/webm/GodRay_R.webm", loop=True)
-image leaves_anim = Movie(play="images/FX/webm/Leaves.webm", loop=True)
-image blossom_anim = Movie(play="images/FX/webm/Blossoms.webm", loop=True)
-image sparkle_blue_anim = Movie(play="images/FX/webm/Sparkle_blue.webm", loop=True)
-image sparkle_red_anim = Movie(play="images/FX/webm/Sparkle_red.webm", loop=True)
-image sparkle_green_anim = Movie(play="images/FX/webm/Sparkle_green.webm", loop=True)
-image sparkle_yellow_anim = Movie(play="images/FX/webm/Sparkle_yellow.webm", loop=True)
-image sparkle_purple_anim = Movie(play="images/FX/webm/Sparkle_purple.webm", loop=True)
-image sparkle_pink_anim = Movie(play="images/FX/webm/Sparkle_pink.webm", loop=True)
-image plasma_blue_anim = Movie(play="images/FX/webm/Plasma_blue.webm", loop=True)
-image plasma_red_anim = Movie(play="images/FX/webm/Plasma_red.webm", loop=True)
-image plasma_green_anim = Movie(play="images/FX/webm/Plasma_green.webm", loop=True)
-image plasma_yellow_anim = Movie(play="images/FX/webm/Plasma_yellow.webm", loop=True)
-image plasma_purple_anim = Movie(play="images/FX/webm/Plasma_purple.webm", loop=True)
-image plasma_white_anim = Movie(play="images/FX/webm/Plasma_white.webm", loop=True)
-image confetti_warm_anim = Movie(play="images/FX/webm/Confetti_warm.webm", loop=True)
-image confetti_cool_anim = Movie(play="images/FX/webm/Confetti_cool.webm", loop=True)
-image confetti_colorful_anim = Movie(play="images/FX/webm/Confetti_colorful.webm", loop=True)
-image matrix_anim = Movie(play="images/FX/webm/Matrix.webm", loop=True)
-image nightsky_anim = Movie(play="images/FX/webm/NightSky.webm", loop=True)
-image shootingstar_anim = Movie(play="images/FX/webm/NightSky_ShootingStar.webm", loop=True)
-image stars_blue_anim = Movie(play="images/FX/webm/Stars_blue.webm", loop=True)
-image stars_red_anim = Movie(play="images/FX/webm/Stars_red.webm", loop=True)
-image stars_green_anim = Movie(play="images/FX/webm/Stars_green.webm", loop=True)
-image stars_yellow_anim = Movie(play="images/FX/webm/Stars_yellow.webm", loop=True)
-image stars_purple_anim = Movie(play="images/FX/webm/Stars_purple.webm", loop=True)
-image stars_pink_anim = Movie(play="images/FX/webm/Stars_pink.webm", loop=True)
-image portal_blue_anim = Movie(play="images/FX/webm/Portal_blue.webm", loop=True)
-image portal_red_anim = Movie(play="images/FX/webm/Portal_red.webm", loop=True)
-image portal_green_anim = Movie(play="images/FX/webm/Portal_green.webm", loop=True)
-image portal_yellow_anim = Movie(play="images/FX/webm/Portal_yellow.webm", loop=True)
-image portal_purple_anim = Movie(play="images/FX/webm/Portal_purple.webm", loop=True)
-image portal_pink_anim = Movie(play="images/FX/webm/Portal_pink.webm", loop=True)
+# Transform for screen blend mode (makes black transparent)
+transform screen_blend:
+    blend "add"
 
-# Leaves animation
-image leaves_anim:
-    "images/FX/animated/leaves/leaves_0000.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0001.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0002.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0003.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0004.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0005.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0006.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0007.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0008.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0009.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0010.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0011.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0012.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0013.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0014.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0015.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0016.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0017.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0018.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0019.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0020.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0021.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0022.png"
-    pause 0.033
-    "images/FX/animated/leaves/leaves_0023.png"
-    repeat
-
-# Blossom animation
-image blossom_anim:
-    "images/FX/animated/blossom/blossom_0000.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0001.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0002.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0003.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0004.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0005.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0006.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0007.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0008.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0009.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0010.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0011.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0012.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0013.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0014.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0015.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0016.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0017.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0018.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0019.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0020.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0021.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0022.png"
-    pause 0.033
-    "images/FX/animated/blossom/blossom_0023.png"
-    repeat
-
-# Sparkle animation
-image sparkle_anim:
-    "images/FX/animated/sparkle/sparkle_0000.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0001.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0002.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0003.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0004.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0005.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0006.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0007.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0008.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0009.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0010.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0011.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0012.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0013.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0014.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0015.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0016.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0017.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0018.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0019.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0020.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0021.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0022.png"
-    pause 0.033
-    "images/FX/animated/sparkle/sparkle_0023.png"
-    repeat
-
-# Plasma animation
-image plasma_anim:
-    "images/FX/animated/plasma/plasma_0000.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0001.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0002.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0003.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0004.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0005.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0006.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0007.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0008.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0009.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0010.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0011.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0012.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0013.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0014.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0015.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0016.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0017.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0018.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0019.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0020.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0021.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0022.png"
-    pause 0.033
-    "images/FX/animated/plasma/plasma_0023.png"
-    repeat
-
-# Confetti animation
-image confetti_anim:
-    "images/FX/animated/confetti/confetti_0000.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0001.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0002.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0003.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0004.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0005.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0006.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0007.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0008.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0009.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0010.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0011.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0012.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0013.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0014.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0015.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0016.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0017.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0018.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0019.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0020.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0021.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0022.png"
-    pause 0.033
-    "images/FX/animated/confetti/confetti_0023.png"
-    repeat
-
-# Night sky animation
-image nightsky_anim:
-    "images/FX/animated/nightsky/nightsky_0000.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0001.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0002.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0003.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0004.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0005.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0006.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0007.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0008.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0009.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0010.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0011.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0012.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0013.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0014.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0015.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0016.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0017.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0018.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0019.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0020.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0021.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0022.png"
-    pause 0.033
-    "images/FX/animated/nightsky/nightsky_0023.png"
-    repeat
-
-  
 # Base screen effect class for PNG sequences
 # Generic screen effect display for static animations
 # Parameters:
@@ -354,7 +14,7 @@ image nightsky_anim:
 # - loop: Whether the effect should loop
 # - fps: Frames per second for the animation
 screen png_sequence_effect(effect_name, x=0, y=0, loop=True, fps=30):
-    layer "sfx"
+    layer "special_fx"
     frame:
         xpos x
         ypos y
@@ -422,7 +82,7 @@ init python:
 # Weather Effects using SnowBlossom
 # Light rain effect using SnowBlossom
 screen rain_light(x=0, y=0):
-    layer "sfx"
+    layer "special_fx"
     frame:
         xpos x
         ypos y
@@ -438,7 +98,7 @@ screen rain_light(x=0, y=0):
 
 # Heavy rain effect using SnowBlossom
 screen rain_heavy(x=0, y=0):
-    layer "sfx"
+    layer "special_fx"
     frame:
         xpos x
         ypos y
@@ -456,7 +116,7 @@ screen rain_heavy(x=0, y=0):
 
 # Light snow effect using SnowBlossom
 screen snow_light(x=0, y=0):
-    layer "sfx"
+    layer "special_fx"
     frame:
         xpos x
         ypos y
@@ -469,7 +129,7 @@ screen snow_light(x=0, y=0):
 
 # Heavy snow effect using SnowBlossom
 screen snow_heavy(x=0, y=0, y_offset=0):
-    layer "sfx"
+    layer "special_fx"
     frame:
         xpos x
         ypos y + y_offset
@@ -486,7 +146,7 @@ screen snow_heavy(x=0, y=0, y_offset=0):
 
 # Blizzard effect using SnowBlossom
 screen blizzard(x=0, y=0, y_offset=0):
-    layer "sfx"
+    layer "special_fx"
     frame:
         xpos x
         ypos y + y_offset
@@ -503,6 +163,32 @@ screen blizzard(x=0, y=0, y_offset=0):
         add SnowBlossom("images/FX/snowblossom/snow/snow_2.png", count=60, xspeed=(-150, 150), yspeed=(600, 1000), start=0.5, fast=True, horizontal=False) zoom 2.5
         add SnowBlossom("images/FX/snowblossom/snow/snow_3.png", count=55, xspeed=(-230, 230), yspeed=(350, 900), start=0.6, fast=True, horizontal=False) zoom 0.3
 
+# Weather Effects using webm
+# Light rain effect using webm
+screen rain_light_webm(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("rain_light_mov", screen_blend) xpos x ypos y + y_offset
+
+# Heavy rain effect using webm
+screen rain_heavy_webm(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("rain_heavy_mov", screen_blend) xpos x ypos y + y_offset
+
+# Light snow effect using webm
+screen snow_light_webm(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("snow_light_mov", screen_blend) xpos x ypos y + y_offset
+
+# Heavy snow effect using webm
+screen snow_heavy_webm(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("snow_heavy_mov", screen_blend) xpos x ypos y + y_offset
+
+# Fog effect using webm
+screen fog_webm(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("fog_mov", screen_blend) xpos x ypos y + y_offset
+
 # Atmospheric Effects using PNG sequences
 # Fog effect
 transform fog_offset:
@@ -510,7 +196,7 @@ transform fog_offset:
 
 # Layered fog effect using SnowBlossom
 screen fog_light(x=0, y=0, alpha=0.85):
-    layer "sfx"
+    layer "special_fx"
     frame:
         xpos x
         ypos y
@@ -528,7 +214,7 @@ screen fog_light(x=0, y=0, alpha=0.85):
 
 # Heavy fog effect using SnowBlossom
 screen fog_heavy(x=0, y=0, alpha=1.0):
-    layer "sfx"
+    layer "special_fx"
     frame:
         xpos x
         ypos y
@@ -545,34 +231,34 @@ screen fog_heavy(x=0, y=0, alpha=1.0):
         add SnowBlossom("images/FX/snowblossom/fog/fog_0008.png", count=52, border=450, yspeed=(-13, 13), xspeed=(64, -64), start=2.4, fast=True, horizontal=True) alpha alpha
 
 # Underwater effect
-screen underwater(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add underwater_anim xpos x ypos y + y_offset
+screen underwater(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("underwater_mov", screen_blend) xpos x ypos y + y_offset
 
 # God ray effect (left)
-screen godray_left(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add godrays_anim xpos x ypos y + y_offset
+screen godray_left(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("godrays_left_mov", screen_blend) xpos x ypos y + y_offset
 
 # God ray effect (right)
-screen godray_right(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add godrays_r_anim xpos x ypos y + y_offset
+screen godray_right(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("godrays_right_mov", screen_blend) xpos x ypos y + y_offset
 
 # Nature Effects using video
 # Falling leaves effect
-screen leaves(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add leaves_anim xpos x ypos y + y_offset
+screen leaves(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("leaves_mov", screen_blend) xpos x ypos y + y_offset
 
 # Cherry blossoms effect
-screen blossoms(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add blossom_anim xpos x ypos y + y_offset
+screen blossoms(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("blossom_mov", screen_blend) xpos x ypos y + y_offset
 
 # Fireflies effect using SnowBlossom
 screen fireflies(x=0, y=0, y_offset=-100):
-    layer "sfx"
+    layer "special_fx"
     frame:
         xpos x
         ypos y + y_offset
@@ -585,163 +271,163 @@ screen fireflies(x=0, y=0, y_offset=-100):
 
 # Star Effects using video (Multiple Colors)
 # Blue stars effect
-screen stars_blue(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add stars_blue_anim xpos x ypos y + y_offset
+screen stars_blue(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("stars_blue_mov", screen_blend) xpos x ypos y + y_offset
 
 # Red stars effect
-screen stars_red(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add stars_red_anim xpos x ypos y + y_offset
+screen stars_red(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("stars_red_mov", screen_blend) xpos x ypos y + y_offset
 
 # Green stars effect
-screen stars_green(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add stars_green_anim xpos x ypos y + y_offset
+screen stars_green(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("stars_green_mov", screen_blend) xpos x ypos y + y_offset
 
 # Yellow stars effect
-screen stars_yellow(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add stars_yellow_anim xpos x ypos y + y_offset
+screen stars_yellow(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("stars_yellow_mov", screen_blend) xpos x ypos y + y_offset
 
 # Purple stars effect
-screen stars_purple(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add stars_purple_anim xpos x ypos y + y_offset
+screen stars_purple(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("stars_purple_mov", screen_blend) xpos x ypos y + y_offset
 
 # Pink stars effect
-screen stars_pink(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add stars_pink_anim xpos x ypos y + y_offset
+screen stars_pink(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("stars_pink_mov", screen_blend) xpos x ypos y + y_offset
 
 # Sparkle Effects using video (Multiple Colors)
 # Blue sparkle effect
-screen sparkle_blue(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add sparkle_blue_anim xpos x ypos y + y_offset
+screen sparkle_blue(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("sparkle_blue_mov", screen_blend) xpos x ypos y + y_offset
 
 # Red sparkle effect
-screen sparkle_red(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add sparkle_red_anim xpos x ypos y + y_offset
+screen sparkle_red(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("sparkle_red_mov", screen_blend) xpos x ypos y + y_offset
 
 # Green sparkle effect
-screen sparkle_green(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add sparkle_green_anim xpos x ypos y + y_offset
+screen sparkle_green(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("sparkle_green_mov", screen_blend) xpos x ypos y + y_offset
 
 # Yellow sparkle effect
-screen sparkle_yellow(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add sparkle_yellow_anim xpos x ypos y + y_offset
+screen sparkle_yellow(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("sparkle_yellow_mov", screen_blend) xpos x ypos y + y_offset
 
 # Purple sparkle effect
-screen sparkle_purple(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add sparkle_purple_anim xpos x ypos y + y_offset
+screen sparkle_purple(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("sparkle_purple_mov", screen_blend) xpos x ypos y + y_offset
 
 # Pink sparkle effect
-screen sparkle_pink(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add sparkle_pink_anim xpos x ypos y + y_offset
+screen sparkle_pink(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("sparkle_pink_mov", screen_blend) xpos x ypos y + y_offset
 
 # Portal Effects using video (Multiple Colors)
 # Blue portal effect
-screen portal_blue(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add portal_blue_anim xpos x ypos y + y_offset
+screen portal_blue(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("portal_blue_mov", screen_blend) xpos x ypos y + y_offset
 
 # Red portal effect
-screen portal_red(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add portal_red_anim xpos x ypos y + y_offset
+screen portal_red(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("portal_red_mov", screen_blend) xpos x ypos y + y_offset
 
 # Green portal effect
-screen portal_green(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add portal_green_anim xpos x ypos y + y_offset
+screen portal_green(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("portal_green_mov", screen_blend) xpos x ypos y + y_offset
 
 # Yellow portal effect
-screen portal_yellow(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add portal_yellow_anim xpos x ypos y + y_offset
+screen portal_yellow(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("portal_yellow_mov", screen_blend) xpos x ypos y + y_offset
 
 # Purple portal effect
-screen portal_purple(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add portal_purple_anim xpos x ypos y + y_offset
+screen portal_purple(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("portal_purple_mov", screen_blend) xpos x ypos y + y_offset
 
 # Pink portal effect
-screen portal_pink(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add portal_pink_anim xpos x ypos y + y_offset
+screen portal_pink(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("portal_pink_mov", screen_blend) xpos x ypos y + y_offset
 
 # Plasma Effects using video (Multiple Colors)
 # Blue plasma effect
 screen plasma_blue(x=0, y=0, y_offset=0):
-    layer "sfx"
-    add plasma_blue_anim xpos x ypos y + y_offset
+    layer "special_fx"
+    add At("plasma_blue_mov", screen_blend) xpos x ypos y + y_offset
 
 # Red plasma effect
 screen plasma_red(x=0, y=0, y_offset=0):
-    layer "sfx"
-    add plasma_red_anim xpos x ypos y + y_offset
+    layer "special_fx"
+    add At("plasma_red_mov", screen_blend) xpos x ypos y + y_offset
 
 # Green plasma effect
 screen plasma_green(x=0, y=0, y_offset=0):
-    layer "sfx"
-    add plasma_green_anim xpos x ypos y + y_offset
+    layer "special_fx"
+    add At("plasma_green_mov", screen_blend) xpos x ypos y + y_offset
 
 # Yellow plasma effect
 screen plasma_yellow(x=0, y=0, y_offset=0):
-    layer "sfx"
-    add plasma_yellow_anim xpos x ypos y + y_offset
+    layer "special_fx"
+    add At("plasma_yellow_mov", screen_blend) xpos x ypos y + y_offset
 
 # Purple plasma effect
 screen plasma_purple(x=0, y=0, y_offset=0):
-    layer "sfx"
-    add plasma_purple_anim xpos x ypos y + y_offset
+    layer "special_fx"
+    add At("plasma_purple_mov", screen_blend) xpos x ypos y + y_offset
 
 # White plasma effect
 screen plasma_white(x=0, y=0, y_offset=0):
-    layer "sfx"
-    add plasma_white_anim xpos x ypos y + y_offset
+    layer "special_fx"
+    add At("plasma_white_mov", screen_blend) xpos x ypos y + y_offset
 
 # Confetti Effects using video
 # Warm colored confetti effect
-screen confetti_warm(x=0, y=0, y_offset=-50):
-    layer "sfx"
-    add confetti_warm_anim xpos x ypos y + y_offset
+screen confetti_warm(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("confetti_warm_mov", screen_blend) xpos x ypos y + y_offset
 
 # Cool colored confetti effect
-screen confetti_cool(x=0, y=0, y_offset=-50):
-    layer "sfx"
-    add confetti_cool_anim xpos x ypos y + y_offset
+screen confetti_cool(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("confetti_cool_mov", screen_blend) xpos x ypos y + y_offset
 
 # Colorful confetti effect
-screen confetti_colorful(x=0, y=0, y_offset=-50):
-    layer "sfx"
-    add confetti_colorful_anim xpos x ypos y + y_offset
+screen confetti_colorful(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("confetti_colorful_mov", screen_blend) xpos x ypos y + y_offset
 
 # Special Effects using video
 # Matrix-style effect
-screen matrix(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add matrix_anim xpos x ypos y + y_offset
+screen matrix(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("matrix_blue_mov", screen_blend) xpos x ypos y + y_offset
 
 # Night sky effect
-screen night_sky(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add nightsky_anim xpos x ypos y + y_offset
+screen night_sky(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("nightsky_mov", screen_blend) xpos x ypos y + y_offset
 
 # Shooting star effect
-screen shooting_star(x=0, y=0, y_offset=-100):
-    layer "sfx"
-    add shootingstar_anim xpos x ypos y + y_offset
+screen shooting_star(x=0, y=0, y_offset=0):
+    layer "special_fx"
+    add At("nightsky_star_mov", screen_blend) xpos x ypos y + y_offset
 
 # Dust effect using SnowBlossom
 screen dust(x=0, y=0, y_offset=-100):
-    layer "sfx"
+    layer "special_fx"
     frame:
         xpos x
         ypos y + y_offset
@@ -754,7 +440,7 @@ screen dust(x=0, y=0, y_offset=-100):
 
 # Petals effect using SnowBlossom
 screen petals(x=0, y=0, y_offset=-100):
-    layer "sfx"
+    layer "special_fx"
     frame:
         xpos x
         ypos y + y_offset
@@ -768,20 +454,20 @@ screen petals(x=0, y=0, y_offset=-100):
 # Composite Effects (Multiple effects combined)
 # Combined magical atmosphere effect
 screen magical_atmosphere(x=0, y=0):
-    layer "sfx"
+    layer "special_fx"
     frame:
         xpos x
         ypos y
         background None
         
         # Multiple effects layered
-        add sparkle_blue_anim xpos 0 ypos 0
-        add stars_purple_anim xpos 0 ypos 0
+        add At("sparkle_blue_mov", screen_blend) xpos 0 ypos 0
+        add At("stars_purple_mov", screen_blend) xpos 0 ypos 0
         use fireflies(0, 0)
 
 # Combined storm weather effect
 screen storm_weather(x=0, y=0):
-    layer "sfx"
+    layer "special_fx"
     frame:
         xpos x
         ypos y
@@ -789,20 +475,20 @@ screen storm_weather(x=0, y=0):
         
         # Multiple effects layered
         use rain_heavy(0,0)
-        add fog_anim xpos 0 ypos 0
+        add At("fog_mov", screen_blend) xpos 0 ypos 0
 
 # Combined celebration effect
 screen celebration(x=0, y=0):
-    layer "sfx"
+    layer "special_fx"
     frame:
         xpos x
         ypos y
         background None
         
         # Multiple effects layered
-        add confetti_colorful_anim xpos 0 ypos 0
-        add sparkle_yellow_anim xpos 0 ypos 0
-        add stars_pink_anim xpos 0 ypos 0
+        add At("confetti_colorful_mov", screen_blend) xpos 0 ypos 0
+        add At("sparkle_yellow_mov", screen_blend) xpos 0 ypos 0
+        add At("stars_pink_mov", screen_blend) xpos 0 ypos 0
 
 # Helper Functions for PNG Effects
 init python:
@@ -1052,7 +738,7 @@ init python:
 
 # Parallax fog effect using static base + animated layers
 screen fog_parallax(x=0, y=0, alpha=0.8):
-    layer "sfx"
+    layer "special_fx"
     frame:
         xpos x
         ypos y
