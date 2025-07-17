@@ -6,10 +6,13 @@
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#preferences
 
+default show_weight_preview = False
 
 screen preferences():
-
     default pref_page = "options"
+    if _open_pref_page is not None:
+        $ pref_page = _open_pref_page
+        $ _open_pref_page = None
     tag menu
 
     use game_menu(_("Preferences"))
@@ -39,7 +42,7 @@ screen preferences():
         button:
             xysize(108,107)
             add "gui/button/cat_bg.png" align(0.5, 0.5)
-            add "gui/icons/help.png" at button_fade
+            add "gui/icons/accessibility.png" at button_fade
             at wiggle
             action SetScreenVariable("pref_page", "accessibility")
         add "gui/button/dec.png" xalign 0.5
@@ -177,29 +180,16 @@ screen accessibility():
                 
                 hbox:
                     textbutton _("Hyperlegible"):
-                        action changeFont("Atkinson_Hyperlegible_Next/AtkinsonHyperlegibleNext-VariableFont_wght.ttf")
-                        selected persistent.pref_text_font == "Atkinson_Hyperlegible_Next/AtkinsonHyperlegibleNext-VariableFont_wght.ttf"
+                        action changeFont("gui/font/Atkinson_Hyperlegible_Next/AtkinsonHyperlegibleNext-VariableFont_wght.ttf")
+                        selected persistent.pref_text_font == "gui/font/Atkinson_Hyperlegible_Next/AtkinsonHyperlegibleNext-VariableFont_wght.ttf"
                     textbutton _("Hyperlegible Mono"):
-                        action changeFont("Atkinson_Hyperlegible_Mono/AtkinsonHyperlegibleMono-VariableFont_wght.ttf")
-                        selected persistent.pref_text_font == "Atkinson_Hyperlegible_Mono/AtkinsonHyperlegibleMono-VariableFont_wght.ttf"
+                        action changeFont("gui/font/Atkinson_Hyperlegible_Mono/AtkinsonHyperlegibleMono-VariableFont_wght.ttf")
+                        selected persistent.pref_text_font == "gui/font/Atkinson_Hyperlegible_Mono/AtkinsonHyperlegibleMono-VariableFont_wght.ttf"
 
                 vbox:
                     style_prefix "slider"
                     label _("Text Size")
                     bar value FieldValue(persistent, "pref_text_size", range=24, offset=16)
-
-                vbox:
-                    style_prefix "slider"
-                    label _("Font Weight")
-                    bar value FieldValue(persistent, "pref_text_weight", range=700, offset=100)
-
-                hbox:
-                    textbutton _("Regular Size"):
-                        action changeScale("regular")
-                        selected persistent.pref_text_scale == "regular"
-                    textbutton _("Large Size"):
-                        action changeScale("large")
-                        selected persistent.pref_text_scale == "large"
 
                 vbox:
                     style_prefix "slider"
@@ -221,55 +211,7 @@ screen accessibility():
                     textbutton _("Soft"):
                         action changeColor("#bdd2c8")
                         selected persistent.pref_text_color == "#bdd2c8"
-            
-            # Live Preview
-            vbox:
-                style_prefix "accessibility"
-                label _("Live Preview")
-                window:
-                    background Frame("gui/textbox.png", 40, 10, 40, 40, tile=False)
-                    xysize (800, 200)
-                    padding (40, 20, 40, 40)
-                    text _("This is how your dialogue text will appear with the current settings. You can see the font, size, color, and spacing changes in real time as you adjust the options above."):
-                        font persistent.pref_text_font
-                        size persistent.pref_text_size
-                        color persistent.pref_text_color
-                        line_spacing persistent.pref_text_spacing
-                        kerning persistent.say_dialogue_kerning
-                        xalign 0.5
-                        yalign 0.5
-                        text_align 0.5
-                text _("Note: Font weight will apply to dialogue, but cannot be previewed here due to Ren'Py limitations."):
-                    size 20
-                    color "#888"
-                    xalign 0.5
 
-
-    if GetFocusRect("display_drop"):
-
-        # If the player clicks outside the frame, dismiss the dropdown.
-        # The ClearFocus action dismisses this dropdown.
-        dismiss action ClearFocus("display_drop")
-
-        # This positions the displayable near (usually under) the button above.
-        nearrect:
-            focus "display_drop"
-
-            style_prefix "dropdown"
-
-            # Finally, this frame contains the choices in the dropdown, with
-            # each using ClearFocus to dismiss the dropdown.
-            frame:
-                background Frame("gui/button/dropdown_bg.png", 10, 0, 10, 50) xsize 445 yoffset -31
-                padding (0, 30, 0, 20)
-                modal True
-
-                has vbox
-
-                frame xysize(300, 1) background Solid(u"#fcd3e154") xalign 0.5
-                textbutton "Fullscreen" action [ Preference("display", "fullscreen"), ClearFocus("display_drop") ]
-                frame xysize(300, 1) background Solid(u"#fcd3e154") xalign 0.5
-                textbutton "Windowed" action [ Preference("display", "window"), ClearFocus("display_drop") ]
 
 ### PREF
 style dropdown_vbox:
@@ -283,7 +225,7 @@ style pref_label:
     top_margin 15
     bottom_margin 3
 
-style pref_label_text:
+style pref_label_text is text:
     yalign 1.0
 
 style pref_vbox:
@@ -391,4 +333,8 @@ style accessibility_button_text:
 
 style accessibility_hbox:
     spacing 30
+
+# --- BEGIN CUSTOM PYTHON DISPLAYABLE FOR LIVE FONT WEIGHT PREVIEW ---
+# (Removed for revert)
+# --- END CUSTOM PYTHON DISPLAYABLE FOR LIVE FONT WEIGHT PREVIEW ---
 

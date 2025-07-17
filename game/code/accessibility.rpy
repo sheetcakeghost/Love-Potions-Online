@@ -17,6 +17,16 @@ default persistent.pref_text_spacing = 0
 init python:
     ### Size Dictionary for Font Scaling
     size_dict = {
+        "gui/font/Atkinson_Hyperlegible_Next/AtkinsonHyperlegibleNext-VariableFont_wght.ttf": {
+            "regular": 32,
+            "large": 36,
+            "line_spacing": 0,
+        },
+        "gui/font/Atkinson_Hyperlegible_Mono/AtkinsonHyperlegibleMono-VariableFont_wght.ttf": {
+            "regular": 32,
+            "large": 36,
+            "line_spacing": 0,
+        },
         "OpenDyslexic.otf": {
             "regular": 31,
             "large": 34,

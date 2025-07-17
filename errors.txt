@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/code/screens/preferences.rpy", line 241: 'font_variables' is not a keyword argument or valid child of the text statement.
-    font_variables={"wght": persistent.pref_text_weight}
-                  ^
+File "game/code/screens/dialogue_screens.rpy", line 345: Line is indented, but the preceding style statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    idle_color '#3b3738'
+    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu Jul 17 10:57:00 2025
+Thu Jul 17 13:31:44 2025

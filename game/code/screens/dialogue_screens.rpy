@@ -19,17 +19,30 @@ screen say(who, what):
     window:
         id "window"
         background Transform("gui/textbox.png", alpha=persistent.say_window_alpha, xalign=0.5, yalign=1.0)
+        xalign 0.5
+        yalign 1.0
+        yoffset -25
+        xysize (1131, 277)
+        padding (40, 10, 40, 40)
 
         if who is not None:
-
             window:
                 id "namebox"
                 style "namebox"
                 text who id "who"
 
-        text what id "what"
+        text what id "what":
+            font persistent.pref_text_font
+            size persistent.pref_text_size
+            color persistent.pref_text_color
+            line_spacing persistent.pref_text_spacing
+            kerning persistent.say_dialogue_kerning
+            axis {"wght": persistent.pref_text_weight}
+            xalign 0.5
+            yalign 0.5
+            text_align 0.5
+            shaper "harfbuzz"
 
-    ## If there's a side image, display it in front of the text.
     add SideImage() xalign 0.0 yalign 1.0
 
 
@@ -54,6 +67,7 @@ style say_dialogue:
     color persistent.pref_text_color
     line_spacing persistent.pref_text_spacing
     kerning persistent.say_dialogue_kerning
+    axis {"wght": persistent.pref_text_weight}
 
 # The style for dialogue said by the narrator
 style say_thought:
@@ -101,6 +115,12 @@ screen quick_menu():
             button: 
                 add "gui/qm/auto.png" at button_fade
                 action Preference("auto-forward", "toggle")
+            # Accessibility quick access button
+            button:
+                add "gui/qm/accessibility.png" at button_fade
+                action [SetVariable('_open_pref_page', 'accessibility'), ShowMenu('preferences')]
+                style "quick_accessibility_button"
+                selected False
 
         
 
@@ -320,3 +340,9 @@ define bubble.expand_area = {
     "top_right" : (0, 22, 0, 0),
     "thought" : (0, 0, 0, 0),
 }
+
+style quick_accessibility_button is quick_button
+style quick_accessibility_button_text is quick_button_text
+style quick_accessibility_button_text idle_color '#3b3738'
+style quick_accessibility_button_text hover_color '#ffffff'
+style quick_accessibility_button_text selected_color '#3b3738'

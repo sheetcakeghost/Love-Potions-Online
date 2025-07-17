@@ -235,3 +235,5 @@ init python:
     if 'master' in config.layers:
         idx = config.layers.index('master') + 1
         config.layers.insert(idx, 'sfx')
+
+default _open_pref_page = None
