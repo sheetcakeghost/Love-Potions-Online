@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/code/effects/vfx.rpy", line 475: 'blend_mode' is not a keyword argument or valid child of the add statement.
-    add "fog_mov" xpos 0 ypos 0 blend_mode "screen"
-                                          ^
+File "game/code/effects/parallax_backgrounds.rpy", line 236: end of line expected.
+    use rain_heavy(0, 0) alpha 0.7
+                         ^
+
+File "game/code/effects/parallax_backgrounds.rpy", line 269: end of line expected.
+    use rain_heavy(0, 0) alpha 0.7
+                         ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu Jul 17 18:41:38 2025
+Thu Jul 17 21:42:53 2025

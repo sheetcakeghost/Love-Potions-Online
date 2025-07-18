@@ -1,9 +1,9 @@
 label testing:
     menu optional_name:
-        "Effects Testing":
-            jump individual_effects_test
         "FX Testing":
             jump fx_testing
+        "Layered Background Testing":
+            jump test_layered_backgrounds
         "General Testing":
             jump general_testing
         
